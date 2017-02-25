@@ -11,4 +11,5 @@ fi
 
 xrdb -load ~/.Xresources
 xrandr --dpi 144
+pcmanfm -d &
 exec i3

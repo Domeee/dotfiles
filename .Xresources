@@ -1,0 +1,10 @@
+Xft.antialias: true
+URxvt.font: xft:Dejavu Sans Mono:size=12
+URxvt.scrollBar: 0
+URxvt.internalBorder: 40
+
+!Plugins
+URxvt.perl-ext-common: keyboard-select
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+
+#include </home/dome/.colors/gjm.xres>

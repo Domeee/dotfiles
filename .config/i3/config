@@ -12,17 +12,6 @@ set $ws8  "8"
 set $ws9  "9"
 set $ws10 "10"
 
-workspace $ws1 output DP-4
-workspace $ws2 output DP-0
-workspace $ws3 output DP-4
-workspace $ws4 output DP-0
-workspace $ws5 output DP-4
-workspace $ws6 output DP-0
-workspace $ws7 output DP-4
-workspace $ws8 output DP-0
-workspace $ws9 output DP-4
-workspace $ws10 output DP-0
-
 ###############################
 # SETTINGS
 ###############################
@@ -200,9 +189,9 @@ bar {
 ###############################
 # AUTOSTART
 ###############################
-exec_always --no-startup-id feh --bg-center $HOME/.config/assets/batman.png
+#exec_always --no-startup-id feh --bg-center $HOME/.config/assets/batman.png
 exec_always --no-startup-id numlockx on
-exec --no-startup-id seq 0 1 | xargs -l1 -I@ compton -b -d :0.@
+#exec --no-startup-id seq 0 1 | xargs -l1 -I@ compton -b -d :0.@
 exec /home/dome/.local/share/tresorit/tresorit
-exec spotify
+#exec spotify
 exec keepass

@@ -18,6 +18,7 @@ set $ws10 "10"
 focus_follows_mouse no
 
 set $mod Mod4
+set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -166,10 +167,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Shutdown, reboot, suspend, hibernate screen
-set $mode_system System (s) suspend, (h) hibernate, (r) reboot, (d) shutdown
+set $mode_system System (l) lock, (r) reboot, (d) shutdown
 mode "$mode_system" {
-    bindsym s exec --no-startup-id systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+    bindsym l exec --no-startup-id i3lock -i ~/Documents/batman.png -c 000000, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym d exec --no-startup-id systemctl poweroff -i, mode "default"  
 
@@ -178,7 +178,7 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+Pause mode "$mode_system"
+bindsym $alt+F4 mode "$mode_system"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

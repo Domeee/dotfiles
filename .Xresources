@@ -1,14 +1,18 @@
-# X Server settings
+! X Server settings
 Xft.antialias: true
 Xft.dpi: 144
 
-# URxvt settings
+! URxvt settings
 URxvt.font: xft:Dejavu Sans Mono:size=12
 URxvt.scrollBar: 0
 URxvt.internalBorder: 40
 
-!Plugins
-URxvt.perl-ext-common: keyboard-select
+! URxvt plugins
+URxvt.perl-ext-common: default,url-select,keyboard-select
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.keysym.M-s: perl:keyboard-select:search
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
 
 #include </home/dome/.colors/gjm.xres>

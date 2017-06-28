@@ -1,4 +1,8 @@
+# X Server settings
 Xft.antialias: true
+Xft.dpi: 144
+
+# URxvt settings
 URxvt.font: xft:Dejavu Sans Mono:size=12
 URxvt.scrollBar: 0
 URxvt.internalBorder: 40

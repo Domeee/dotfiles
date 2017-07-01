@@ -45,7 +45,7 @@ source $ZSH/oh-my-zsh.sh
 ##
 # OH-MY-ZSH PLUGINS
 ##
-plugins=(git)
+plugins=()
 
 ##
 # ALIASES

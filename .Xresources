@@ -2,7 +2,7 @@
 Xft.antialias: true
 
 ! URxvt settings
-URxvt.font: xft:Dejavu Sans Mono:size=12
+URxvt.font: xft:Dejavu Sans Mono for Powerline:size=12
 URxvt.scrollBar: 0
 URxvt.internalBorder: 20
 

@@ -1,0 +1,31 @@
+// Place your settings in this file to overwrite the default settings
+{
+  "editor.fontSize": 16,
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/.meteor": true
+  },
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "sync.gist": "7a17a774428076448b8f07011290e46f",
+  "sync.lastUpload": "",
+  "sync.autoDownload": true,
+  "sync.autoUpload": true,
+  "sync.lastDownload": "2017-07-05T18:16:52.120Z",
+  "sync.forceDownload": false,
+  "sync.anonymousGist": false,
+  "editor.formatOnSave": true,
+  "workbench.iconTheme": "vs-seti",
+  "sync.host": "",
+  "sync.pathPrefix": "",
+  "sync.quietSync": false,
+  "window.menuBarVisibility": "toggle",
+  "workbench.statusBar.visible": true,
+  "sync.askGistName": false
+}

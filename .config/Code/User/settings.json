@@ -3,6 +3,14 @@
   "editor.fontSize": 16,
   "editor.minimap.enabled": false,
   "editor.tabSize": 2,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/.meteor": true
+  },
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
   "sync.gist": "7a17a774428076448b8f07011290e46f",

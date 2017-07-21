@@ -55,8 +55,8 @@ alias sudo='sudo '
 alias ls='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 # Git
-alias gaa='git add --all'
-alias gcm='git commit -m'
+alias ga='git add --all'
+alias gc='git commit -m'
 
 ##
 # Node Version Manager

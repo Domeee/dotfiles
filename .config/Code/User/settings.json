@@ -28,6 +28,7 @@
   "sync.pathPrefix": "",
   "sync.quietSync": false,
   "window.menuBarVisibility": "toggle",
-  "workbench.statusBar.visible": true,
-  "sync.askGistName": false
+  "workbench.statusBar.visible": false,
+  "sync.askGistName": false,
+  "workbench.activityBar.visible": false
 }

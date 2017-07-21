@@ -38,9 +38,6 @@ font pango:Dejavu Sans Mono 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# Disable window borders (i3-gaps requirement)
-for_window [class="^.*"] border pixel 0
-
 ###############################
 # APP → WORKSPACES
 ###############################
@@ -53,8 +50,26 @@ for_window [class="Spotify"] move to workspace $ws10
 ###############################
 # i3-gaps
 ###############################
-#gaps outer 20
-#gaps inner 20
+gaps inner 18
+smart_gaps on
+
+##############################
+# borders
+##############################
+new_window pixel 4
+smart_borders no_gaps
+
+##############################
+# colors
+##############################
+# class			border	backgr. text	indicator child_border
+client.focused          #000000 #000000 #ffffff #555555   #333333
+client.focused_inactive #000000 #000000 #ffffff #000000   #000000
+client.unfocused        #000000 #000000 #888888 #000000   #000000
+client.urgent           #000000 #000000 #ffffff #000000   #000000
+client.placeholder      #000000 #000000 #ffffff #000000   #000000
+
+client.background       #000000
 
 ###############################
 # SHORTCUTS

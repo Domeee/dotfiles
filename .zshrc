@@ -30,6 +30,9 @@ SAVEHIST=1000
 zstyle :compinstall filename '/home/dome/.zshrc'
 autoload -Uz compinit
 compinit
+# Fix slow Git completion
+__git_files () { 
+    _wanted files expl 'local files' _files  }
 
 ##
 # KEYBINDINGS

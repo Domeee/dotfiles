@@ -29,5 +29,9 @@
   {
     "key": "ctrl+shift+[Period]",
     "command": "eslint.executeAutofix"
+  },
+  {
+    "key": "ctrl+shift+c",
+    "command": "git.openChange"
   }
 ]

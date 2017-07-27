@@ -3,8 +3,6 @@
 ##
 # Path to your oh-my-zsh installation.
 export ZSH=/home/dome/.oh-my-zsh
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
 
 ##
 # THEME
@@ -31,6 +29,9 @@ SAVEHIST=1000
 zstyle :compinstall filename '/home/dome/.zshrc'
 autoload -Uz compinit
 compinit
+# Fix slow Git completion
+__git_files () {
+	_wanted files expl 'local files' _files }
 
 ##
 # KEYBINDINGS

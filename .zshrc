@@ -58,6 +58,7 @@ alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --colo
 # Git
 alias ga='git add --all'
 alias gc='git commit -m'
+alias gs='git status'
 
 ##
 # Node Version Manager

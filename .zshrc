@@ -59,10 +59,17 @@ alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --colo
 alias ga='git add --all'
 alias gc='git commit -m'
 alias gs='git status'
+
+##
+# FUNCTIONS
+##
 # browser-sync
-alias browser-sync-server='browser-sync start --server'
+browser-sync-server() {
+  browser-sync start --server --files "$1"
+}
+
 browser-sync-proxy() {
-	browser-sync start --proxy "$1"
+  browser-sync start --proxy "$1" --files "$2"
 }
 
 ##

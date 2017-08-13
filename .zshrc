@@ -59,6 +59,11 @@ alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --colo
 alias ga='git add --all'
 alias gc='git commit -m'
 alias gs='git status'
+# browser-sync
+alias browser-sync-server='browser-sync start --server'
+browser-sync-proxy() {
+	browser-sync start --proxy "$1"
+}
 
 ##
 # Node Version Manager

@@ -208,3 +208,4 @@ exec_always --no-startup-id feh --bg-center $HOME/.config/assets/batman.png
 exec_always --no-startup-id numlockx on
 exec /home/dome/.local/share/tresorit/tresorit
 exec keepassxc
+exec_always --no-startup-id mons -m &!

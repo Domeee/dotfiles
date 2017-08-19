@@ -65,11 +65,11 @@ alias gs='git status'
 ##
 # browser-sync
 browser-sync-server() {
-  browser-sync start --server --files "$1"
+  browser-sync start --server --files "$1" --no-notify
 }
 
 browser-sync-proxy() {
-  browser-sync start --proxy "$1" --files "$2"
+  browser-sync start --proxy "$1" --files "$2" --no-notify
 }
 
 ##

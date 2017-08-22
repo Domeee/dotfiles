@@ -61,6 +61,7 @@ alias chrome-bekb='google-chrome-unstable --disable-web-security --user-data-dir
 # Git
 alias ga='git add --all'
 alias gc='git commit -m '
+alias gs='git status'
 # mons
 alias mons-extend='mons -e'
 alias mons-duplicate='mons -d'

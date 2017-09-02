@@ -1,3 +1,2 @@
-gtk-theme-name = "Vertex-Dark"
+gtk-theme-name = "Adwaita"
 gtk-font-name = "DejaVu Sans 12"
-gtk-application-prefer-dark-theme = true

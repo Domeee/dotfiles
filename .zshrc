@@ -68,6 +68,19 @@ alias mons-duplicate='mons -d'
 alias mons-only-main='mons -o'
 
 ##
+# FUNCTIONS
+##
+# browser-sync
+browser-sync-server() {
+  browser-sync start --server --files "$1" --no-notify
+}
+
+browser-sync-proxy() {
+  browser-sync start --proxy "$1" --files "$2" 
+--no-notify
+}
+
+##
 # Node Version Manager
 ##
 source /usr/share/nvm/init-nvm.sh

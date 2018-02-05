@@ -13,4 +13,5 @@ xrdb -merge ~/.Xresources
 
 # run pcmanfm in daemon mode in the background
 pcmanfm -d &
+udiskie &
 exec i3

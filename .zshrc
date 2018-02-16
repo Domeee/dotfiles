@@ -75,10 +75,10 @@ browser-sync-proxy() {
 ##
 # Node Version Manager
 ##
-#source /usr/share/nvm/init-nvm.sh
+source /usr/share/nvm/init-nvm.sh
 
 # Automatically load node runtime version from .nvm
-#autoload -U add-zsh-hook
+autoload -U add-zsh-hook
 load-nvmrc() {
   local node_version="$(nvm version)"
   local nvmrc_path="$(nvm_find_nvmrc)"
@@ -97,4 +97,4 @@ load-nvmrc() {
   fi
 }
 #add-zsh-hook chpwd load-nvmrc
-#load-nvmrc
+load-nvmrc

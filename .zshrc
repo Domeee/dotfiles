@@ -1,4 +1,10 @@
 ##
+# ENVIRONMENT
+##
+export EDITOR=nano
+export VISUAL=code
+
+##
 # ZSH
 ##
 # Path to your oh-my-zsh installation.

@@ -30,7 +30,6 @@ floating_modifier $mod
 ###############################
 # APP → WORKSPACES
 ###############################
-assign [class="Tresorit"] → $ws10
 assign [class="keepassxc"] → $ws10
 #Spotify Bug https://github.com/i3/i3/issues/2060
 #assign [class="Spotify"] → $ws10

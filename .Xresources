@@ -6,14 +6,6 @@ URxvt.font: xft:Dejavu Sans Mono for Powerline:size=12
 URxvt.scrollBar: 0
 URxvt.internalBorder: 20
 
-! URxvt plugins
-URxvt.perl-ext-common: default,url-select,keyboard-select
-URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.keysym.M-s: perl:keyboard-select:search
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
-URxvt.url-select.launcher: /usr/bin/xdg-open
-URxvt.url-select.underline: true
-
 ! URxvt color
 *cursorColor:   #cee318
 *background:    #1C1C1C

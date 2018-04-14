@@ -1,7 +1,7 @@
 ##
 # ENVIRONMENT
 ##
-export EDITOR=NANO
+export EDITOR=nano
 export VISUAL=code
 
 ##

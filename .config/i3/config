@@ -221,6 +221,6 @@ bar {
 exec_always --no-startup-id feh --bg-center $HOME/.config/assets/batman.png
 exec_always --no-startup-id numlockx on
 exec --no-startup-id seq 0 1 | xargs -l1 -I@ compton -b -d :0.@
-exec redshift-gtk
+exec --no-startup-id redshift-gtk
 exec spotify
 exec keepassxc

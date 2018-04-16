@@ -67,6 +67,12 @@ alias gc='git commit -m'
 alias gs='git status'
 
 ##
+# NVM
+##
+export NVM_DIR="$HOME/.nvm"
+export NVM_SOURCE="/usr/share/nvm"
+
+##
 # FUNCTIONS
 ##
 # browser-sync
@@ -76,4 +82,8 @@ browser-sync-server() {
 
 browser-sync-proxy() {
   browser-sync start --proxy "$1" --files "$2" --no-notify
+}
+
+load-nvm() {
+[ -s "$NVM_SOURCE/nvm.sh" ] && . "$NVM_SOURCE/nvm.sh"
 }

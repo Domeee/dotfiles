@@ -3,6 +3,7 @@
 ##
 export EDITOR=nano
 export VISUAL=code
+export NVM_DIR="$HOME/.nvm"
 
 ##
 # ZSH
@@ -67,12 +68,6 @@ alias gc='git commit -m'
 alias gs='git status'
 
 ##
-# NVM
-##
-export NVM_DIR="$HOME/.nvm"
-export NVM_SOURCE="/usr/share/nvm"
-
-##
 # FUNCTIONS
 ##
 # browser-sync
@@ -85,5 +80,7 @@ browser-sync-proxy() {
 }
 
 load-nvm() {
+export NVM_DIR="$HOME/.nvm"
+export NVM_SOURCE="/usr/share/nvm"
 [ -s "$NVM_SOURCE/nvm.sh" ] && . "$NVM_SOURCE/nvm.sh"
 }

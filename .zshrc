@@ -37,7 +37,7 @@ zstyle :compinstall filename '/home/dome/.zshrc'
 autoload -Uz compinit
 compinit
 # Fix slow Git completion
-__git_files () { 
+__git_files () {
     _wanted files expl 'local files' _files  }
 
 ##
@@ -82,33 +82,12 @@ browser-sync-server() {
 }
 
 browser-sync-proxy() {
-  browser-sync start --proxy "$1" --files "$2" 
+  browser-sync start --proxy "$1" --files "$2"
 --no-notify
 }
 
-##
-# Node Version Manager
-##
-source /usr/share/nvm/init-nvm.sh
-
-# Automatically load node runtime version from .nvm
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
+load-nvm() {
+export NVM_DIR="$HOME/.nvm"
+export NVM_SOURCE="/usr/share/nvm"
+[ -s "$NVM_SOURCE/nvm.sh" ] && . "$NVM_SOURCE/nvm.sh"
 }
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc

@@ -2,7 +2,7 @@
 # ENVIRONMENT
 ##
 export EDITOR=nano
-export VISUAL=code
+export VISUAL=nano
 export NVM_DIR="$HOME/.nvm"
 
 ##

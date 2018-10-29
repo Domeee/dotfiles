@@ -2,14 +2,19 @@
 # ENVIRONMENT
 ##
 export EDITOR=nano
-export VISUAL=nano
-export NVM_DIR="$HOME/.nvm"
+export VISUAL=code
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/emulator
 
 ##
 # ZSH
 ##
 # Path to your oh-my-zsh installation.
-export ZSH=/home/dome/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 ##
 # THEME

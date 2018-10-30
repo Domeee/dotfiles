@@ -3,8 +3,12 @@
 ##
 export EDITOR=nano
 export VISUAL=code
-export ANDROID_HOME=/opt/android-sdk/
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
+export ANDROID_HOME=/opt/android-sdk/
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/emulator
 
 ##
 # ZSH

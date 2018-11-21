@@ -11,6 +11,15 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/emulator
 
 ##
+# Ruby
+##
+
+export GEM_HOME=$HOME/.gem
+
+# allow RubyGems to be executed
+export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+
+##
 # ZSH
 ##
 # Path to your oh-my-zsh installation.

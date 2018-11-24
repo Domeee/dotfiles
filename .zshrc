@@ -9,21 +9,14 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/emulator
+export NVM_DIR="$HOME/.nvm"
+export NVM_SOURCE="/usr/share/nvm"
+export ZSH=$HOME/.oh-my-zsh
 
-##
 # Ruby
-##
-
 export GEM_HOME=$HOME/.gem
-
 # allow RubyGems to be executed
 export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
-
-##
-# ZSH
-##
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
 
 ##
 # THEME
@@ -93,8 +86,29 @@ browser-sync-proxy() {
   browser-sync start --proxy "$1" --files "$2" --no-notify
 }
 
-load-nvm() {
-export NVM_DIR="$HOME/.nvm"
-export NVM_SOURCE="/usr/share/nvm"
+##
+# Node Version Manager (nvm)
+##
 [ -s "$NVM_SOURCE/nvm.sh" ] && . "$NVM_SOURCE/nvm.sh"
+[ -s "$NVM_SOURCE/bash_completion" ] && \. "$NVM_SOURCE/bash_completion"
+
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
 }
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc

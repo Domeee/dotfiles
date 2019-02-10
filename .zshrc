@@ -1,6 +1,7 @@
 ##
 # ENVIRONMENT
 ##
+export TERMINAL=kitty
 export EDITOR=nano
 export VISUAL=code
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
@@ -9,9 +10,10 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/emulator
-export NVM_DIR="$HOME/.nvm"
-export NVM_SOURCE="/usr/share/nvm"
-export ZSH=$HOME/.oh-my-zsh
+
+# Allow user-wide installation of packages
+PATH="$HOME/.node_modules/bin:$PATH"
+export npm_config_prefix=~/.node_modules
 
 # Ruby
 export GEM_HOME=$HOME/.gem
@@ -21,11 +23,7 @@ export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 ##
 # THEME
 ##
-ZSH_THEME="powerlevel9k/powerlevel9k"
-
-##
-# THEME POWERLEVEL9K
-##
+source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 DEFAULT_USER=dome
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
@@ -53,16 +51,6 @@ __git_files () {
 bindkey -e		# emacs keybindings
 
 ##
-# OH-MY-ZSH
-##
-source $ZSH/oh-my-zsh.sh
-
-##
-# OH-MY-ZSH PLUGINS
-##
-plugins=()
-
-##
 # ALIASES
 ##
 # enable sudo for aliases
@@ -77,7 +65,6 @@ alias gs='git status'
 ##
 # FUNCTIONS
 ##
-# browser-sync
 browser-sync-server() {
   browser-sync start --server --files "$1" --no-notify
 }
@@ -85,30 +72,3 @@ browser-sync-server() {
 browser-sync-proxy() {
   browser-sync start --proxy "$1" --files "$2" --no-notify
 }
-
-##
-# Node Version Manager (nvm)
-##
-[ -s "$NVM_SOURCE/nvm.sh" ] && . "$NVM_SOURCE/nvm.sh"
-[ -s "$NVM_SOURCE/bash_completion" ] && \. "$NVM_SOURCE/bash_completion"
-
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc

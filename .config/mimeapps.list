@@ -1,6 +1,7 @@
 [Added Associations]
 application/pdf=firefox-developer-edition.desktop;google-chrome.desktop;
 image/png=pinta.desktop;gimp.desktop;
+application/octet-stream=code-oss.desktop;
 
 [Default Applications]
 application/pdf=firefox-developer-edition.desktop

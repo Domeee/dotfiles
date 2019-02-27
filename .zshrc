@@ -9,6 +9,11 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$HOME/.local/bin
+
+## Allow node packages user-wide installations
+PATH="$HOME/.node_modules/bin:$PATH"
+export npm_config_prefix=~/.node_modules
 
 ##
 # ZSH
@@ -90,10 +95,4 @@ browser-sync-server() {
 browser-sync-proxy() {
   browser-sync start --proxy "$1" --files "$2"
 --no-notify
-}
-
-load-nvm() {
-export NVM_DIR="$HOME/.nvm"
-export NVM_SOURCE="/usr/share/nvm"
-[ -s "$NVM_SOURCE/nvm.sh" ] && . "$NVM_SOURCE/nvm.sh"
 }

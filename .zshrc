@@ -66,9 +66,13 @@ alias gs='git status'
 # FUNCTIONS
 ##
 browser-sync-server() {
-  browser-sync start --server --files "$1" --no-notify
+  browser-sync start --server --files "$1" --no-notify --index index.html --no-open --no-ui
+}
+
+browser-sync-server-ssl() {
+  browser-sync start --server --files "$1" --no-notify --index index.html --no-open --no-ui --https
 }
 
 browser-sync-proxy() {
-  browser-sync start --proxy "$1" --files "$2" --no-notify
+  browser-sync start --proxy "$1" --files "$2" --no-notify --index index.html --no-open --no-ui
 }

@@ -76,3 +76,7 @@ browser-sync-server-ssl() {
 browser-sync-proxy() {
   browser-sync start --proxy "$1" --files "$2" --no-notify --index index.html --no-open --no-ui
 }
+
+## ASDF VM
+. /opt/asdf-vm/asdf.sh
+. /opt/asdf-vm/completions/asdf.bash

@@ -10,6 +10,7 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/tools
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$HOME/.dotnet/tools
 
 # Allow user-wide installation of packages
 PATH="$HOME/.node_modules/bin:$PATH"

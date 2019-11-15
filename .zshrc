@@ -22,14 +22,6 @@ export GEM_HOME=$HOME/.gem
 export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 
 ##
-# THEME
-##
-source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
-DEFAULT_USER=dome
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
-
-##
 # HISTORY
 ##
 HISTFILE=~/.histfile
@@ -58,6 +50,7 @@ bindkey -e		# emacs keybindings
 alias sudo='sudo '
 alias ls='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias cat='pygmentize -g'
 # Git
 alias ga='git add --all'
 alias gc='git commit -m'
@@ -77,7 +70,3 @@ browser-sync-server-ssl() {
 browser-sync-proxy() {
   browser-sync start --proxy "$1" --files "$2" --no-notify --index index.html --no-open --no-ui
 }
-
-## ASDF VM
-. /opt/asdf-vm/asdf.sh
-. /opt/asdf-vm/completions/asdf.bash

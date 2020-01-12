@@ -22,6 +22,14 @@ export GEM_HOME=$HOME/.gem
 export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 
 ##
+# ZSH
+##
+zstyle :compinstall filename '/home/dome/.zshrc'
+autoload -Uz compinit promptinit vcs_info
+compinit
+promptinit
+
+##
 # HISTORY
 ##
 HISTFILE=~/.histfile
@@ -31,17 +39,24 @@ SAVEHIST=1000
 ##
 # COMPLETION
 ##
-zstyle :compinstall filename '/home/dome/.zshrc'
-autoload -Uz compinit
-compinit
 # Fix slow Git completion
 __git_files () {
 	_wanted files expl 'local files' _files }
+kitty + complete setup zsh | source /dev/stdin
+
+##
+# PROMPT
+##
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+RPROMPT=\$vcs_info_msg_0_
+zstyle ':vcs_info:git:*' formats '%b'
 
 ##
 # KEYBINDINGS
 ##
-bindkey -e		# emacs keybindings
+bindkey -v		
 
 ##
 # ALIASES
@@ -70,3 +85,10 @@ browser-sync-server-ssl() {
 browser-sync-proxy() {
   browser-sync start --proxy "$1" --files "$2" --no-notify --index index.html --no-open --no-ui
 }
+
+##
+# ASDF
+##
+. /opt/asdf-vm/asdf.sh
+. /opt/asdf-vm/completions/asdf.bash
+

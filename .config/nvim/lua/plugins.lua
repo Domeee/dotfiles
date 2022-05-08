@@ -8,11 +8,9 @@ end
 
 require("paq")({
 	"savq/paq-nvim",
-	-- "Domeee/tender.vim",
-	"EdenEast/nightfox.nvim",
+	"Domeee/mosel.nvim",
 	"tpope/vim-fugitive",
 	"tpope/vim-surround",
-	"elixir-editors/vim-elixir",
 	"HerringtonDarkholme/yats.vim",
 	"francoiscabrol/ranger.vim",
 	"rbgrouleff/bclose.vim",

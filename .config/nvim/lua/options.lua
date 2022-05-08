@@ -34,5 +34,5 @@ opt.shortmess:prepend("c")
 vim.o.grepprg = [[rg --no-heading --smart-case --vimgrep ]]
 vim.o.grepformat = "%f:%l:%c:%m"
 
-vim.opt.runtimepath:append("~/code/mosel.nvim")
+-- vim.opt.runtimepath:append("~/code/mosel.nvim")
 cmd("colorscheme mosel")

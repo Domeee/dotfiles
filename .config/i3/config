@@ -52,11 +52,11 @@ hide_edge_borders smart
 # COLORS
 ##############################
 #                       class		border	backgr. text	indicator child_border
-client.focused          #16161D #16161D #FFFFFF       #B9B9CA   #73CEF4
-client.focused_inactive #16161D #16161D #FFFFFF       #B9B9CA   #16161D
-client.unfocused        #16161D #16161D #4F4F69       #B9B9CA   #16161D
-client.urgent           #16161D #16161D #4F4F69       #B9B9CA   #16161D
-client.placeholder      #16161D #16161D #4F4F69       #B9B9CA   #16161D
+client.focused          #16161D #16161D #FFFFFF       #FF99C9   #73CEF4
+client.focused_inactive #16161D #16161D #FFFFFF       #4F4F69   #23232F
+client.unfocused        #16161D #16161D #4F4F69       #4F4F69   #23232F
+client.urgent           #16161D #16161D #4F4F69       #4F4F69   #16161D
+client.placeholder      #16161D #16161D #4F4F69       #4F4F69   #16161D
 
 client.background       #16161D
 

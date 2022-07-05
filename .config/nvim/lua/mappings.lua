@@ -1,11 +1,11 @@
 local g = vim.g
 
 local function map(mode, lhs, rhs, opts)
-	local options = { noremap = true }
-	if opts then
-		options = vim.tbl_extend("force", options, opts)
-	end
-	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+  local options = { noremap = true }
+  if opts then
+    options = vim.tbl_extend("force", options, opts)
+  end
+  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
 --Remap space as leader key
@@ -18,6 +18,12 @@ map("v", "<C-l>", "<esc>")
 map("c", "<C-l>", "<C-c>")
 --- Use <C-l> as <esc> in insert mode or end completion when completion menu opened
 map("i", "<C-l>", "pumvisible() ? '<C-e>' : '<esc>'", { expr = true })
+
+-- completion
+map("i", "<C-space>", "<C-x><C-o>")
+map("i", "<C-j>", "pumvisible() ? '<C-n>' : '<C-j>'", { expr = true })
+map("i", "<C-k>", "pumvisible() ? '<C-p>' : '<cmd>lua vim.lsp.buf.signature_help()<CR>'", { expr = true })
+map("i", "<CR>", "pumvisible() ? '<C-y>' : '<CR>'", { expr = true })
 
 -- buffer
 map("n", "<leader>/", "<cmd>noh<CR>")
@@ -46,7 +52,6 @@ map("n", "<leader>cvs", "<cmd>so $MYVIMRC<CR>")
 -- misc
 map("n", "<leader>ff", "<cmd>Ranger<CR>")
 map("n", "gs", "<cmd>Scratch<CR>")
-map("i", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 
 -- vim-fugitive
 map("n", "<leader>vs", "<cmd>G<CR>")
@@ -70,5 +75,3 @@ map("i", "{", "{<C-g>u")
 map("i", "}", "}<C-g>u")
 map("i", "[", "[<C-g>u")
 map("i", "]", "]<C-g>u")
-
-map("i", "<C-j>", "vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<C-j>'", { expr = true })

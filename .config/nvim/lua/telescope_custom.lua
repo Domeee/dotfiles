@@ -5,14 +5,16 @@ require("telescope").setup({
 		mappings = {
 			i = {
 				["<C-l>"] = actions.close,
+				["<C-j>"] = actions.move_selection_next,
+				["<C-k>"] = actions.move_selection_previous,
 			},
 		},
 		path_display = { "tail" },
 		dynamic_preview_title = true,
-		preview = {
-			-- treesitter = false,
-		},
 	},
 })
 
-require("telescope").load_extension("fzf")
+local ts = require("telescope")
+
+ts.load_extension("fzf")
+ts.load_extension("ui-select")

@@ -50,15 +50,15 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$HOME/.loca/bin
+export PATH=$PATH:$HOME/.local/bin
 export PRETTIERD_DEFAULT_CONFIG=$HOME/.config/prettier/.prettierrc
+export _Z_DATA=$HOME/.config/z/.z
 
 ##
 # ALIAS
 ##
 alias v="nvim"
-# alias vs="NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim"
- alias vs="nvim --listen /tmp/nvimsocket"
+alias vs="nvim --listen /tmp/nvimsocket"
 alias sudo="sudo "
 alias ga="git add --all"
 alias gc="git commit -m"
@@ -71,7 +71,7 @@ alias open="xdg-open"
 alias hexdocs="mix hex.docs online"
 # https://docs.unity3d.com/Manual/CommandLineArguments.html
 # -projectPath <pathname>
-UNITYVERSION="2021.2.19f1"
+UNITYVERSION="2021.3.2f1"
 alias unity="GDK_SCALE=2 GDK_DPI_SCALE=0.5 prime-run /home/dome/Unity/Hub/Editor/$UNITYVERSION/Editor/Unity -projectPath"
 
 ##
@@ -99,7 +99,6 @@ bindkey -M viins '^l' vi-cmd-mode # exit insert mode with <CTRL>l
 source /opt/asdf-vm/asdf.sh
 fpath=(${ASDF_DIR}/completions $fpath)
 fpath=(~/.stripe $fpath)
-source /home/dome/.secrets
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/z/z.sh
 

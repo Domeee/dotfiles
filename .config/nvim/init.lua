@@ -1,10 +1,10 @@
 require("scratch")
+
 require("plugins")
 
 require("commands")
 require("lsp")
 
-require("completion")
 require("telescope_custom")
 require("comment")
 require("treesitter")
@@ -16,4 +16,6 @@ require("options")
 
 -- requires options
 require("lualine_custom")
+
+-- enable for debugging
 -- require("logging")

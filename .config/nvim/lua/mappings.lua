@@ -44,6 +44,7 @@ map("v", "K", "5k")
 map("n", "j", "gj")
 map("n", "k", "gk")
 map("n", "<leader>j", "J")
+map("n", "<leader>d", "<cmd>lua vim.diagnostic.goto_next()<CR>")
 
 -- config
 map("n", "<leader>cv", "<cmd>edit $MYVIMRC<CR>")

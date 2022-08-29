@@ -29,8 +29,8 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "gr", [[<cmd>lua require('telescope.builtin').lsp_references()<CR>]], opts)
   buf_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
   buf_set_keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-  buf_set_keymap("n", "<leader>d", [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts)
-  buf_set_keymap("n", "<leader>ee", [[<cmd>lua require('telescope.builtin').diagnostics()<CR>]], opts)
+  buf_set_keymap("n", "<leader>ss", [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts)
+  buf_set_keymap("n", "<leader>se", [[<cmd>lua require('telescope.builtin').diagnostics()<CR>]], opts)
   buf_set_keymap("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
   buf_set_keymap("n", "<leader>h", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
   buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
@@ -43,11 +43,11 @@ local on_attach = function(client, bufnr)
   -- format on save
   if client.resolved_capabilities.document_formatting then
     vim.cmd([[
-	augroup Format
-	au! * <buffer>
-	au BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil, 1000)
-	augroup END
-	]]  )
+  augroup Format
+  au! * <buffer>
+  au BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil, 1000)
+  augroup END
+  ]] )
   end
 end
 
@@ -55,17 +55,11 @@ end
 nvim_lsp.elixirls.setup({
   on_attach = on_attach,
   cmd = { "/usr/bin/elixir-ls" },
-  flags = {
-    debounce_text_changes = 150,
-  },
 })
 
 -- TypeScript
 nvim_lsp.tsserver.setup({
   on_attach = on_attach,
-  flags = {
-    debounce_text_changes = 150,
-  },
   init_options = {
     preferences = {
       -- based on the baseUrl configured in tsconfig.json
@@ -78,27 +72,18 @@ nvim_lsp.tsserver.setup({
 nvim_lsp.jsonls.setup({
   on_attach = on_attach,
   cmd = { "vscode-json-languageserver", "--stdio" },
-  flags = {
-    debounce_text_changes = 150,
-  },
 })
 
 -- HTML
 nvim_lsp.html.setup({
   on_attach = on_attach,
   cmd = { "vscode-html-languageserver", "--stdio" },
-  flags = {
-    debounce_text_changes = 150,
-  },
 })
 
 -- ESLint
 nvim_lsp.eslint.setup({
   on_attach = on_attach,
   cmd = { "vscode-eslint-language-server", "--stdio" },
-  flags = {
-    debounce_text_changes = 150,
-  },
 })
 
 -- Lua
@@ -127,9 +112,6 @@ nvim_lsp.sumneko_lua.setup({
         enable = false,
       },
     },
-  },
-  flags = {
-    debounce_text_changes = 150,
   },
 })
 
@@ -185,32 +167,25 @@ nvim_lsp["efm"].setup({
     "html",
     "gdscript",
   },
-  flags = {
-    debounce_text_changes = 150,
-  },
 })
 
 -- XML
 nvim_lsp.lemminx.setup({
   on_attach = on_attach,
   cmd = { "lemminx" },
-  flags = {
-    debounce_text_changes = 150,
-  },
 })
 
 -- TailwindCSS
 nvim_lsp.tailwindcss.setup({
   on_attach = on_attach,
-  flags = {
-    debounce_text_changes = 150,
-  },
 })
 
 -- GDScript
 nvim_lsp.gdscript.setup({
   on_attach = on_attach,
-  flags = {
-    debounce_text_changes = 150,
-  },
+})
+
+-- Bash
+nvim_lsp.bashls.setup({
+  on_attach = on_attach
 })

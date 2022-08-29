@@ -73,6 +73,7 @@ alias hexdocs="mix hex.docs online"
 # -projectPath <pathname>
 UNITYVERSION="2021.3.2f1"
 alias unity="GDK_SCALE=2 GDK_DPI_SCALE=0.5 prime-run /home/dome/Unity/Hub/Editor/$UNITYVERSION/Editor/Unity -projectPath"
+alias enerjoy="sh /home/dome/code/enerjoy/enerjoy.sh"
 
 ##
 # FUNCTIONS
@@ -99,6 +100,7 @@ bindkey -M viins '^l' vi-cmd-mode # exit insert mode with <CTRL>l
 source /opt/asdf-vm/asdf.sh
 fpath=(${ASDF_DIR}/completions $fpath)
 fpath=(~/.stripe $fpath)
+fpath=(~/.zsh $fpath)
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/z/z.sh
 
@@ -107,6 +109,7 @@ source /usr/share/z/z.sh
 setopt autocd extendedglob
 unsetopt beep
 zstyle :compinstall filename '/home/dome/.zshrc'
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
 autoload -Uz compinit promptinit vcs_info zcalc
 compinit
 promptinit

@@ -37,6 +37,7 @@ font pango:Vera Sans Mono 8
 ###############################
 assign [class="KeePassXC"] $ws10
 for_window [title=".*Emulator.*"] floating enable
+for_window [class="arandr"] floating enable
 
 #Spotify Bug https://github.com/i3/i3/issues/2060
 for_window [class="Spotify"] move to workspace $ws10

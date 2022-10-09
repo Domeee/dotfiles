@@ -20,8 +20,6 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, ...)
   end
 
-  vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-
   local opts = { noremap = true, silent = true }
 
   buf_set_keymap("n", "gd", [[<cmd>lua require('telescope.builtin').lsp_definitions()<CR>]], opts)
@@ -33,7 +31,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "<leader>se", [[<cmd>lua require('telescope.builtin').diagnostics()<CR>]], opts)
   buf_set_keymap("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
   buf_set_keymap("n", "<leader>h", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-  buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+  buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
 
   if (client.name == "tsserver") or (client.name == "gdscript") then
     client.resolved_capabilities.document_formatting = false
@@ -41,11 +39,11 @@ local on_attach = function(client, bufnr)
   end
 
   -- format on save
-  if client.resolved_capabilities.document_formatting then
+  if client.server_capabilities.documentFormattingProvider then
     vim.cmd([[
   augroup Format
   au! * <buffer>
-  au BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil, 1000)
+  au BufWritePre <buffer> lua vim.lsp.buf.format()
   augroup END
   ]] )
   end

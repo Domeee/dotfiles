@@ -73,7 +73,6 @@ alias hexdocs="mix hex.docs online"
 # -projectPath <pathname>
 UNITYVERSION="2021.3.2f1"
 alias unity="GDK_SCALE=2 GDK_DPI_SCALE=0.5 prime-run /home/dome/Unity/Hub/Editor/$UNITYVERSION/Editor/Unity -projectPath"
-alias enerjoy="sh /home/dome/code/enerjoy/enerjoy.sh"
 
 ##
 # FUNCTIONS
@@ -85,6 +84,10 @@ function to {
 
 function ex-watch {
   fswatch -r -m poll_monitor lib/ test/ | MIX_ENV=test mix test --stale --listen-on-stdin
+}
+
+function enerjoy {
+  ./bin/enerjoy.sh $@
 }
 
 ##

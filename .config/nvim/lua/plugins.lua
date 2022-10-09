@@ -20,7 +20,7 @@ require("paq")({
   { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
   "nvim-lualine/lualine.nvim",
   { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
-  "nvim-treesitter/playground", -- Install to use :TSHighlightCapturesUnderCursor
+  --[[ "nvim-treesitter/playground", -- Install to use :TSHighlightCapturesUnderCursor ]]
   "windwp/nvim-ts-autotag",
   "numToStr/Comment.nvim",
   "JoosepAlviste/nvim-ts-context-commentstring",

@@ -15,7 +15,7 @@ require("statusline")
 require("options")
 
 -- requires options
-require("lualine_custom")
+require("colorizer_custom")
 
 -- enable for debugging
 -- require("logging")

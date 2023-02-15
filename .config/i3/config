@@ -198,7 +198,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 ###############################
 # AUTOSTART
 ###############################
-exec --no-startup-id picom -CGb
+exec --no-startup-id picom -b
 exec --no-startup-id hsetroot -solid '#16161d'
 exec spotify --force-device-scale-factor=1.5
 exec keepassxc

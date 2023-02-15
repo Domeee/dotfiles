@@ -58,7 +58,7 @@ export _Z_DATA=$HOME/.config/z/.z
 # ALIAS
 ##
 alias v="nvim"
-alias vs="nvim --listen /tmp/nvimsocket"
+alias vs="nvim --listen /tmp/nvim.pipe"
 alias sudo="sudo "
 alias ga="git add --all"
 alias gc="git commit -m"
@@ -73,6 +73,7 @@ alias hexdocs="mix hex.docs online"
 # -projectPath <pathname>
 UNITYVERSION="2021.3.2f1"
 alias unity="GDK_SCALE=2 GDK_DPI_SCALE=0.5 prime-run /home/dome/Unity/Hub/Editor/$UNITYVERSION/Editor/Unity -projectPath"
+alias sshk="kitty +kitten ssh"
 
 ##
 # FUNCTIONS
@@ -116,4 +117,3 @@ zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
 autoload -Uz compinit promptinit vcs_info zcalc
 compinit
 promptinit
-kitty + complete setup zsh | source /dev/stdin

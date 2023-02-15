@@ -38,4 +38,19 @@ require("nvim-treesitter.configs").setup({
     enable = true,
     enable_autocmd = false,
   },
+  indent = {
+    enable = true
+  },
+  textobjects = {
+    select = {
+      enable = true,
+      lookahead = true,
+      keymaps = {
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ao"] = "@block.outer",
+        ["io"] = "@block.inner",
+      },
+    },
+  },
 })

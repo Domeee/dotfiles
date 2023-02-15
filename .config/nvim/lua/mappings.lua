@@ -20,16 +20,14 @@ map("c", "<C-l>", "<C-c>")
 map("i", "<C-l>", "pumvisible() ? '<C-e>' : '<esc>'", { expr = true })
 
 -- completion
-map("i", "<C-space>", "<C-x><C-o>")
-map("i", "<C-j>", "pumvisible() ? '<C-n>' : '<C-j>'", { expr = true })
 map("i", "<C-k>", "pumvisible() ? '<C-p>' : '<cmd>lua vim.lsp.buf.signature_help()<CR>'", { expr = true })
-map("i", "<CR>", "pumvisible() ? '<C-y>' : '<CR>'", { expr = true })
 
 -- buffer
 map("n", "<leader>/", "<cmd>noh<CR>")
 map("n", "<leader>w", "<cmd>update<CR>")
 map("n", "<leader>q", "<cmd>q<CR>")
-map("n", "<leader>bD", "<cmd>%bdelete<CR>")
+map("n", "<leader>bd", "<cmd>bd<CR>")
+map("n", "<leader>bD", "<cmd>%bd<CR>")
 
 -- navigation
 map("n", "<C-j>", "<C-w><C-j>")
@@ -51,7 +49,7 @@ map("n", "<leader>cv", "<cmd>edit $MYVIMRC<CR>")
 map("n", "<leader>cvs", "<cmd>so $MYVIMRC<CR>")
 
 -- misc
-map("n", "<leader>ff", "<cmd>Ranger<CR>")
+map("n", "<leader>ff", "<cmd>RnvimrToggle<CR>")
 map("n", "gs", "<cmd>Scratch<CR>")
 
 -- vim-fugitive
@@ -61,9 +59,10 @@ map("n", "<leader>vf", "<cmd>diffget //2<CR>") -- current branch / HEAD
 map("n", "<leader>vj", "<cmd>diffget //3<CR>") -- merge branch
 
 -- Telescope
-map("n", "<leader>sf", "<cmd>Telescope find_files<cr>")
-map("n", "<leader>sg", "<cmd>Telescope live_grep<cr>")
-map("n", "<leader>sb", "<cmd>Telescope buffers<cr>")
+map("n", "<leader>sf", "<cmd>Telescope find_files<CR>")
+--[[ map("n", "<leader>sg", "<cmd>Telescope live_grep<CR>") ]]
+map("n", "<leader>sg", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
+map("n", "<leader>sb", "<cmd>Telescope buffers<CR>")
 
 -- undo breakpoints
 map("i", ",", ",<C-g>u")

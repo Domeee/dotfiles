@@ -1,4 +1,3 @@
-local g = vim.g
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/paqs/start/paq-nvim"
 
@@ -7,33 +6,38 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 require("paq")({
-  "savq/paq-nvim",
-  "Domeee/mosel.nvim",
-  "tpope/vim-fugitive",
-  "tpope/vim-surround",
-  "francoiscabrol/ranger.vim",
-  "rbgrouleff/bclose.vim",
-  "neovim/nvim-lspconfig",
-  "nvim-lua/plenary.nvim",
-  "nvim-telescope/telescope.nvim",
-  "nvim-telescope/telescope-ui-select.nvim",
-  { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
-  "nvim-lualine/lualine.nvim",
-  { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
-  --[[ "nvim-treesitter/playground", -- Install to use :TSHighlightCapturesUnderCursor ]]
-  "windwp/nvim-ts-autotag",
-  "numToStr/Comment.nvim",
-  "JoosepAlviste/nvim-ts-context-commentstring",
-  {
-    "iamcco/markdown-preview.nvim",
-    run = function()
-      vim.fn["mkdp#util#install"]()
-    end,
-  },
-  "norcalli/nvim-colorizer.lua",
+    "savq/paq-nvim",
+    --[[ "Domeee/mosel.nvim", ]]
+    "tpope/vim-fugitive",
+    "tpope/vim-surround",
+    "kevinhwang91/rnvimr",
+    "neovim/nvim-lspconfig",
+    "nvim-lua/plenary.nvim",
+    "nvim-telescope/telescope.nvim",
+    "nvim-telescope/telescope-ui-select.nvim",
+    { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+    "nvim-telescope/telescope-live-grep-args.nvim",
+    "nvim-lualine/lualine.nvim",
+    { "nvim-treesitter/nvim-treesitter",          run = ":TSUpdate" },
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    "windwp/nvim-ts-autotag",
+    "numToStr/Comment.nvim",
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    {
+        "iamcco/markdown-preview.nvim",
+        run = function()
+          vim.fn["mkdp#util#install"]()
+        end,
+    },
+    "norcalli/nvim-colorizer.lua",
+    -- completion start
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+    "hrsh7th/cmp-cmdline",
+    "hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-vsnip",
+    "hrsh7th/vim-vsnip",
+    -- completion end
+    "github/copilot.vim"
 })
-
--- customization
-
-g.ranger_map_keys = 0
-g.ranger_replace_netrw = 1

@@ -1,5 +1,6 @@
 local opt = vim.opt
 local cmd = vim.cmd
+local o = vim.o
 
 opt.number = true
 opt.signcolumn = "yes:1"
@@ -23,15 +24,15 @@ opt.shiftwidth = 2
 opt.expandtab = true
 opt.smartindent = true
 
--- omnifunc completion
-vim.o.completeopt = "menu"
+-- omnifunc completion, overriden by nvim-cmp
+o.completeopt = "menu,menuone,noselect"
 
 -- statusline
 opt.shortmess:prepend("c") -- don't show useless messages from completion
 
 -- grep
-vim.o.grepprg = [[rg --no-heading --smart-case --vimgrep ]]
-vim.o.grepformat = "%f:%l:%c:%m"
+o.grepprg = [[rg --no-heading --smart-case --vimgrep ]]
+o.grepformat = "%f:%l:%c:%m"
 
---[[ vim.opt.runtimepath:append("~/code/mosel.nvim") ]]
+vim.opt.runtimepath:append("~/code/mosel.nvim")
 cmd("colorscheme mosel")

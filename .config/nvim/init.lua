@@ -2,6 +2,7 @@ require("scratch")
 require("plugins")
 require("commands")
 require("lsp")
+require("debugging")
 require("completion")
 require("telescope_custom")
 require("comment")
@@ -14,4 +15,4 @@ require("options")
 require("colorizer_custom")
 
 -- enable for debugging
--- require("logging")
+--[[ require("logging") ]]

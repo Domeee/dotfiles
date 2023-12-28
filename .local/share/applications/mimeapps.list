@@ -1,0 +1,16 @@
+[Default Applications]
+application/pdf=org.pwmt.zathura.desktop;
+image/*=krita_png.desktop;
+inode/x-empty=nvim.desktop;
+text/html=firefoxdeveloperedition.desktop;
+text/plain=nvim.desktop;
+x-scheme-handler/about=firefoxdeveloperedition.desktop;
+x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop;
+x-scheme-handler/http=firefoxdeveloperedition.desktop;
+x-scheme-handler/https=firefoxdeveloperedition.desktop;
+x-scheme-handler/terminal=kitty.desktop;
+x-scheme-handler/unknown=firefoxdeveloperedition.desktop;
+x-scheme-handler/etcher=balena-etcher.desktop
+
+[Added Associations]
+image/png=krita_png.desktop;

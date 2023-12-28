@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Screenshot Region
+Exec=grim -g "$(slurp)" - | wl-copy
+Type=Application

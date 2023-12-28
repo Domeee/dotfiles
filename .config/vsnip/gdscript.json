@@ -1,0 +1,8 @@
+{
+	"log": {
+		"prefix": [
+			"log"
+		],
+		"body": "Logger.debug($1)"
+	}
+}

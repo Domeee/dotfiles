@@ -1,0 +1,18 @@
+{
+  "layer": "top", // Waybar at top layer
+  "position": "bottom", // Waybar position (top|bottom|left|right)
+  "height": 15, // Waybar height (to be removed for auto height)
+  "margin": 0,
+  "modules-left": ["sway/workspaces"],
+  "modules-center": ["sway/window"],
+  "modules-right": ["clock"],
+  // Modules configuration
+  "sway/workspaces": {
+    "all-outputs": false,
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "<span>{:%Y-%m-%d %H:%M }</span>"
+  }
+}
+

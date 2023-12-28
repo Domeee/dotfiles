@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Spotify
+Comment=Spotify
+Exec=spotify --enable-features=UseOzonePlatform --ozone-platform=wayland --uri=%U
+Terminal=false
+Type=Application

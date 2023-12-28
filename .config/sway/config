@@ -1,0 +1,270 @@
+###############################
+# SETTINGS
+###############################
+set $mod Mod4
+set $alt Mod1
+
+set $term kitty
+
+set $output_left DP-3
+set $output_middle DP-1
+set $output_right DP-2
+
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+set $menu dmenu_path | j4-dmenu-desktop --dmenu="bemenu --ignorecase --prompt 'run' \
+    --tb '#16161d' \
+    --tf '#696983' \
+    --fb '#2B2B3B' \
+    --hf '#73CEF4' \
+    --nf '#B9B9CA'" \
+    --term="kitty" | xargs swaymsg exec --
+
+focus_follows_mouse no
+
+floating_modifier $mod
+
+###############################
+# OUTPUTS
+###############################
+
+# swaymsg -t get_outputs; man 5 sway-output
+output $output_middle scale 2 pos 1920 0
+output $output_right scale 2 pos 3840 0
+output $output_left scale 2 pos 0 0
+
+# requires swaybg
+output * bg #16161D solid_color
+
+###############################
+# INPUTS
+###############################
+
+# swaymsg -t get_inputs; man 5 sway-input
+input type:keyboard {
+    xkb_layout "ch"
+    xkb_variant ",qwertz"
+    xkb_options "ctrl:swapcaps"
+    xkb_numlock enabled
+}
+
+###############################
+# WORKSPACES
+###############################
+set $ws01  1
+set $ws02  2
+set $ws03  3
+set $ws04  4
+set $ws05  5
+set $ws06  6
+set $ws07  7
+set $ws08  8
+set $ws09  9
+set $ws10 10
+
+workspace $ws01 output $output_middle
+workspace $ws02 output $output_middle
+workspace $ws03 output $output_middle
+workspace $ws04 output $output_middle
+workspace $ws05 output $output_left
+workspace $ws06 output $output_left
+workspace $ws07 output $output_left
+workspace $ws08 output $output_right
+workspace $ws09 output $output_right
+workspace $ws10 output $output_right
+
+###############################
+# APP SPECIFIC SETTINGS
+###############################
+for_window {
+  # Hide Emulator Toolbar
+  # [title="Emulator" window_type="utility"] move container to workspace $ws10
+  [title="Firefox Developer Edition — Sharing Indicator"] floating enable
+  [title="KeePassXC - Browser Access Request"] floating enable
+  [app_id="awakening"] move container to workspace $ws05
+  # Godot
+  [title="Please Confirm..."] floating enable, border none
+# Krita
+  [title="Create new document — Krita"] floating disable
+  [title="PNG image — Krita"] floating disable
+  [app_id="obsidian"] move container to workspace $ws10
+}
+
+###############################
+# SCRATCHPAD
+###############################
+# exec keepassxc
+exec kitty --title __scratchpad
+
+bindsym $mod+s scratchpad show
+# bindsym $mod+y [app_id="org.keepassxc.KeePassXC"] scratchpad show
+for_window [title="__scratchpad"] move scratchpad, resize set 1200 800
+# for_window [app_id="org.keepassxc.KeePassXC"] move scratchpad
+
+##############################
+# BORDERS
+##############################
+default_border pixel 4
+default_floating_border pixel 0
+hide_edge_borders smart
+
+##############################
+# COLORS
+##############################
+client.focused          #16161D #16161D #FFFFFF       #FFFFFF   #73CEF4
+client.focused_inactive #16161D #16161D #FFFFFF       #4F4F69   #23232F
+client.unfocused        #16161D #16161D #4F4F69       #4F4F69   #23232F
+client.urgent           #16161D #16161D #4F4F69       #4F4F69   #16161D
+client.placeholder      #16161D #16161D #4F4F69       #4F4F69   #16161D
+client.background       #16161D
+
+###############################
+# SHORTCUTS
+###############################
+
+# Start a terminal
+bindsym $mod+Return exec $term
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Start your launcher
+bindsym $mod+d exec $menu
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# change focus
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+h focus left
+
+# move focused window
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left
+
+# split in horizontal orientation
+bindsym $mod+minus split h
+
+# split in vertical orientation
+bindsym $mod+comma split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+#bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+Shift+a focus child
+
+# switch to workspace
+bindsym $mod+1 workspace $ws01
+bindsym $mod+2 workspace $ws02
+bindsym $mod+3 workspace $ws03
+bindsym $mod+4 workspace $ws04
+bindsym $mod+5 workspace $ws05
+bindsym $mod+6 workspace $ws06
+bindsym $mod+7 workspace $ws07
+bindsym $mod+8 workspace $ws08
+bindsym $mod+9 workspace $ws09
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws01
+bindsym $mod+Shift+2 move container to workspace $ws02
+bindsym $mod+Shift+3 move container to workspace $ws03
+bindsym $mod+Shift+4 move container to workspace $ws04
+bindsym $mod+Shift+5 move container to workspace $ws05
+bindsym $mod+Shift+6 move container to workspace $ws06
+bindsym $mod+Shift+7 move container to workspace $ws07
+bindsym $mod+Shift+8 move container to workspace $ws08
+bindsym $mod+Shift+9 move container to workspace $ws09
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+###############################
+# RESIZING CONTAINERS
+###############################
+mode "resize" {
+    # These bindings trigger as soon as you enter the resize mode
+
+    # Pressing h will grow the window’s width.
+    # Pressing l will shrink the window’s width.
+    # Pressing j will grow the window’s height.
+    # Pressing k will shrink the window’s height.
+    bindsym h resize grow width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize shrink width 10 px or 10 ppt
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+###############################
+# SHUTDOWN, REBOOT, SUSPEND, HIBERNATE
+###############################
+set $mode_system System (s) suspend, (h) hibernate, (r) reboot, (d) shutdown
+
+mode "$mode_system" {
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym d exec --no-startup-id systemctl poweroff -i, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $alt+F4 mode "$mode_system"
+
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioPlay exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym XF86AudioNext exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+bindsym XF86AudioPrev exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+
+###############################
+# IDLE
+###############################
+
+# turn monitor off after minutes * seconds
+exec swayidle -w timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
+
+###############################
+# STATUS BAR
+###############################
+# Read `man 5 sway-bar` for more information about this section.
+bar swaybar_command waybar
+
+###############################
+# AUTOSTART
+###############################
+# https://wiki.archlinux.org/title/PipeWire#WebRTC_screen_sharing
+# https://github.com/flameshot-org/flameshot/blob/master/docs/Sway%20and%20wlroots%20support.md#sway-and-wlroots-support
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec obsidian --ozone-platform-hint=auto %U
+exec wlsunset -l 46.93 -L 7.56
+
+include /etc/sway/config.d/*

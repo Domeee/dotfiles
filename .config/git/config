@@ -1,0 +1,11 @@
+[user]
+  name = Dominique Huber
+  email = dominique@donhubi.ch
+[pull]
+  rebase = false
+[init]
+  defaultBranch = master
+[diff]
+  submodule = log
+[status]
+  submodulesummary = 1

@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Screenshot Screen
+Exec=grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy
+Type=Application

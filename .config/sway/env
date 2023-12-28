@@ -1,0 +1,5 @@
+# https://wiki.archlinux.org/title/sway#Java_applications
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# https://wiki.archlinux.org/title/PipeWire#WebRTC_screen_sharing
+export XDG_CURRENT_DESKTOP=sway

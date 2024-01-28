@@ -51,6 +51,12 @@ local home = vim.fn.expand("$HOME")
 
 require("chatgpt").setup({
   api_key_cmd = "gpg --decrypt " .. home .. "/.config/nvim/openapi_api_key.gpg",
+  openai_params = {
+    model = "gpt-4-1106-preview",
+  },
+  openai_edit_params = {
+    model = "gpt-4-1106-preview",
+  },
 })
 
 require("ibl").setup()

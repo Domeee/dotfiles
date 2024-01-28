@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=AI
+Exec=chatbox --enable-features=UseOzonePlatform --ozone-platform=wayland --uri=%U
+Terminal=false
+Type=Application

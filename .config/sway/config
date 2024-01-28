@@ -77,29 +77,35 @@ workspace $ws10 output $output_right
 # APP SPECIFIC SETTINGS
 ###############################
 for_window {
-  # Hide Emulator Toolbar
-  # [title="Emulator" window_type="utility"] move container to workspace $ws10
+  # Utility workspace
+  [app_id="obsidian"] move container to workspace $ws10
+  [app_id="xyz.chatboxapp.app"] move container to workspace $ws10
+
+  # Specific workspaces
+  [app_id="awakening"] move container to workspace $ws05
+
+  # Floating windows
   [title="Firefox Developer Edition — Sharing Indicator"] floating enable
   [title="KeePassXC - Browser Access Request"] floating enable
-  [app_id="awakening"] move container to workspace $ws05
   # Godot
   [title="Please Confirm..."] floating enable, border none
-# Krita
+  # Krita
   [title="Create new document — Krita"] floating disable
   [title="PNG image — Krita"] floating disable
-  [app_id="obsidian"] move container to workspace $ws10
+
+  # Android stuff
+  [title="Android Emulator"] floating enable
+  # Hide Emulator Toolbar
+  [title="Emulator" window_type="utility"] move scratchpad
 }
 
 ###############################
 # SCRATCHPAD
 ###############################
-# exec keepassxc
 exec kitty --title __scratchpad
 
-bindsym $mod+s scratchpad show
-# bindsym $mod+y [app_id="org.keepassxc.KeePassXC"] scratchpad show
+bindsym $mod+s [title="__scratchpad"] scratchpad show
 for_window [title="__scratchpad"] move scratchpad, resize set 1200 800
-# for_window [app_id="org.keepassxc.KeePassXC"] move scratchpad
 
 ##############################
 # BORDERS

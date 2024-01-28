@@ -164,10 +164,9 @@ nvim_lsp["efm"].setup({
       html = {
         prettier,
       },
-      -- Circumvent ugly linebreaks with parentheses in GDScript
       gdscript = {
         {
-          formatCommand = "gdformat - --line-length 999",
+          formatCommand = "gdformat -",
           formatStdin = true
         },
       },

@@ -50,12 +50,10 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$HOME/.local/bin
-export PRETTIERD_DEFAULT_CONFIG=$HOME/.config/prettier/.prettierrc
 export _Z_DATA=$HOME/.config/z/.z
 export ENERJOY_CONFIG_HOME=/home/dome/code/enerjoy
 export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/ripgrep.conf
 export QT_STYLE_OVERRIDE=adwaita-dark
-export GLAMOUR_STYLE=/home/dome/.config/glow/mosel.json
 
 ##
 # ALIAS
@@ -76,6 +74,7 @@ alias hexdocs="mix hex.docs online"
 UNITYVERSION="2021.3.2f1"
 alias unity="GDK_SCALE=2 GDK_DPI_SCALE=0.5 prime-run /home/dome/Unity/Hub/Editor/$UNITYVERSION/Editor/Unity -projectPath"
 alias sshk="kitty +kitten ssh"
+alias ai="sgpt"
 
 ##
 # FUNCTIONS
@@ -91,10 +90,6 @@ function ex-watch {
 
 function enerjoy {
   ./bin/enerjoy.sh $@
-}
-
-function ai {
-  sgpt $@ | glow
 }
 
 ##

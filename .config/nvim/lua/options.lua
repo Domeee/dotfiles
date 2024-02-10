@@ -18,7 +18,6 @@ opt.path:prepend("**")
 opt.swapfile = false
 opt.list = true
 opt.listchars = "tab:→ ,space:·,extends:»,precedes:«,nbsp:␣,trail:•,eol:↵"
-opt.colorcolumn = "93"
 -- code indentation
 opt.tabstop = 2
 opt.shiftwidth = 2

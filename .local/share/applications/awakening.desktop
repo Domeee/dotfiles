@@ -1,0 +1,3 @@
+[Desktop Entry]
+Name=awakening
+Exec=/home/dome/code/godot/bin/godot.linuxbsd.editor.x86_64 --path /home/dome/code/awakening --editor --display-driver wayland --verbose > /home/dome/code/godot/debug_log.txt 2>&1

@@ -92,6 +92,10 @@ function enerjoy {
   ./bin/enerjoy.sh $@
 }
 
+function awakening {
+  ./awakening.sh $@
+}
+
 ##
 # KEYBINDINGS
 ##

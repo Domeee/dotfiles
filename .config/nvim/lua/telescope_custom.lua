@@ -1,17 +1,8 @@
 local actions = require("telescope.actions")
 local telescope = require("telescope")
-local telescopeConfig = require("telescope.config")
-
--- Clone the default Telescope configuration
-local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
-
--- Ignore addon files in Godot
-table.insert(vimgrep_arguments, "--glob")
-table.insert(vimgrep_arguments, "!**/addons/*")
 
 telescope.setup({
   defaults = {
-    vimgrep_arguments = vimgrep_arguments,
     mappings = {
       i = {
         ["<C-l>"] = actions.close,

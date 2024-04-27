@@ -25,9 +25,10 @@ require("paq")({
   -- completion end
   "mfussenegger/nvim-dap",
   "rcarriga/nvim-dap-ui",
+  "nvim-neotest/nvim-nio",
   -- typing QoL start
   "RRethy/nvim-treesitter-endwise",
-  "tpope/vim-surround",
+  "kylechui/nvim-surround",
   "windwp/nvim-ts-autotag",
   "numToStr/Comment.nvim",
   "windwp/nvim-autopairs",
@@ -52,11 +53,12 @@ local home = vim.fn.expand("$HOME")
 require("chatgpt").setup({
   api_key_cmd = "gpg --decrypt " .. home .. "/.config/nvim/openapi_api_key.gpg",
   openai_params = {
-    model = "gpt-4-1106-preview",
+    model = "gpt-4-turbo",
   },
   openai_edit_params = {
-    model = "gpt-4-1106-preview",
+    model = "gpt-4-turbo",
   },
 })
 
 require("ibl").setup()
+require("nvim-surround").setup()

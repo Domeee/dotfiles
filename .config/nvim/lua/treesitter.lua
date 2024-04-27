@@ -45,11 +45,9 @@ require("nvim-treesitter.configs").setup({
   },
   autotag = {
     enable = true,
+    -- Use nvim-surround (cst) instead
+    enable_rename = false,
   },
-  --[[ context_commentstring = { ]]
-  --[[   enable = true, ]]
-  --[[   enable_autocmd = false, ]]
-  --[[ }, ]]
   indent = {
     enable = true,
     disable = { "gdscript" },

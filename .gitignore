@@ -39,6 +39,7 @@
 !.config/fontconfig/**
 !.config/git/**
 !.config/glow/**
+!.config/godot/**
 !.config/godot/script_templates/**
 !.config/gtk-3.0/**
 !.config/gtk-4.0/**

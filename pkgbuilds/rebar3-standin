@@ -1,0 +1,6 @@
+pkgname=rebar3-standin
+pkgver=0.1
+pkgrel=1
+pkgdesc="standin package for rebar3"
+arch=('any')
+provides=('rebar3')

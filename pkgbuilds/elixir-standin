@@ -1,0 +1,6 @@
+pkgname=elixir-standin
+pkgver=0.1
+pkgrel=1
+pkgdesc="standin package for elixir"
+arch=('any')
+provides=('elixir')

@@ -52,6 +52,7 @@ map("n", "<leader>vj", "<cmd>diffget //3<CR>") -- merge branch
 map("n", "<leader>sf", "<cmd>Telescope find_files<CR>")
 map("n", "<leader>sg", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 map("n", "<leader>sb", "<cmd>Telescope buffers<CR>")
+map("n", "<leader>sm", "<cmd>Telescope marks<CR>")
 
 -- undo breakpoints
 map("i", ",", ",<C-g>u")
@@ -71,8 +72,11 @@ vim.keymap.set("n", "<F6>", function () require("dap").step_over() end)
 vim.keymap.set("n", "<F7>", function () require("dap").step_into() end)
 vim.keymap.set("n", "<F8>", function () require("dap").step_out() end)
 vim.keymap.set("n", "<F9>", function () require("dap").disconnect() end)
-vim.keymap.set("n", "<Leader>b", function () require("dap").toggle_breakpoint() end)
+vim.keymap.set("n", "<leader>b", function () require("dap").toggle_breakpoint() end)
 
 -- ChatGPT
-vim.keymap.set("n", "<Leader>cc", "<cmd>ChatGPT<CR>")
-vim.keymap.set({ "n", "v" }, "<Leader>ci", "<cmd>ChatGPTEditWithInstruction<CR>")
+vim.keymap.set("n", "<leader>cc", "<cmd>ChatGPT<CR>")
+vim.keymap.set({ "n", "v" }, "<leader>ci", "<cmd>ChatGPTEditWithInstruction<CR>")
+
+-- Copilot
+vim.keymap.set("i", "<C-K>", "<Plug>(copilot-suggest)")

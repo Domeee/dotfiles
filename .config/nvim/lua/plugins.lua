@@ -30,7 +30,6 @@ require("paq")({
   "RRethy/nvim-treesitter-endwise",
   "kylechui/nvim-surround",
   "windwp/nvim-ts-autotag",
-  "numToStr/Comment.nvim",
   "windwp/nvim-autopairs",
   "JoosepAlviste/nvim-ts-context-commentstring",
   {
@@ -62,3 +61,7 @@ require("chatgpt").setup({
 
 require("ibl").setup()
 require("nvim-surround").setup()
+
+vim.g.copilot_filetypes = {
+  ["*"] = false,
+}

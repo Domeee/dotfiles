@@ -9,7 +9,7 @@ for type, icon in pairs(signs) do
 end
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-  virtual_text = false,
+  virtual_text = true,
   signs = true,
   underline = true,
   update_in_insert = false,
@@ -102,25 +102,27 @@ nvim_lsp.eslint.setup({
 nvim_lsp.lua_ls.setup({
   on_init = function (client)
     local path = client.workspace_folders[1].name
-    if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
-      client.config.settings = vim.tbl_deep_extend('force', client.config.settings, {
-        Lua = {
-          runtime = {
-            version = 'LuaJIT'
-          },
-          workspace = {
-            checkThirdParty = false,
-            library = {
-              vim.env.VIMRUNTIME
-            }
-          }
-        }
-      })
-
-      client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+    ---@diagnostic disable-next-line: undefined-field
+    if vim.loop.fs_stat(path .. '/.luarc.json') or vim.loop.fs_stat(path .. '/.luarc.jsonc') then
+      return
     end
-    return true
+
+    client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+      runtime = {
+        version = 'LuaJIT'
+      },
+      -- Make the server aware of Neovim runtime files
+      workspace = {
+        checkThirdParty = false,
+        library = {
+          vim.env.VIMRUNTIME
+        }
+      }
+    })
   end,
+  settings = {
+    Lua = {}
+  },
   capabilities = capabilities,
   on_attach = on_attach,
 })
@@ -212,4 +214,16 @@ nvim_lsp.clangd.setup({
   capabilities = capabilities,
   on_attach = on_attach,
   cmd = { "clangd", "--offset-encoding=utf-16", },
+})
+
+-- Dockerfile
+nvim_lsp.dockerls.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+-- Docker Compose
+nvim_lsp.docker_compose_language_service.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
 })

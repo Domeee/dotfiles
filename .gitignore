@@ -8,6 +8,10 @@
 !.zshrc
 
 !bin/
+!bin/**
+
+!pkgbuilds/
+!pkgbuilds/**
 
 !.config/
 !.config/fontconfig/
@@ -34,8 +38,6 @@
 !.local/
 !.local/share/
 !.local/share/applications/
-
-!bin/**
 
 !.config/fontconfig/**
 !.config/git/**

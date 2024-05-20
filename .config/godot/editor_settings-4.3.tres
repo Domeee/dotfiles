@@ -1,4 +1,4 @@
-[gd_resource type="EditorSettings" load_steps=6 format=3]
+[gd_resource type="EditorSettings" load_steps=12 format=3]
 
 [sub_resource type="InputEventKey" id="InputEventKey_w0iji"]
 device = -1
@@ -15,10 +15,34 @@ device = -1
 keycode = 74
 unicode = 106
 
+[sub_resource type="InputEventKey" id="InputEventKey_yguyn"]
+device = -1
+physical_keycode = 4194322
+
 [sub_resource type="InputEventKey" id="InputEventKey_x315n"]
 device = -1
 keycode = 75
 unicode = 107
+
+[sub_resource type="InputEventKey" id="InputEventKey_cb1d7"]
+device = -1
+physical_keycode = 4194320
+
+[sub_resource type="InputEventKey" id="InputEventKey_wl0le"]
+keycode = 4194319
+
+[sub_resource type="InputEventKey" id="InputEventKey_b1a3l"]
+device = -1
+physical_keycode = 72
+unicode = 104
+
+[sub_resource type="InputEventKey" id="InputEventKey_3sg1v"]
+keycode = 4194321
+
+[sub_resource type="InputEventKey" id="InputEventKey_3l1yj"]
+device = -1
+physical_keycode = 76
+unicode = 108
 
 [sub_resource type="InputEventKey" id="InputEventKey_j160b"]
 device = -1
@@ -68,7 +92,9 @@ text_editor/completion/idle_parse_delay = 0.1
 text_editor/completion/code_complete_delay = 0.01
 run/window_placement/rect = 4
 run/platforms/linuxbsd/prefer_wayland = true
+network/connection/network_mode = 1
 network/tls/editor_tls_certificates = "/etc/ssl/certs/ca-certificates.crt"
+debugger/auto_switch_to_remote_scene_tree = true
 project_manager/default_renderer = "gl_compatibility"
 filesystem/import/fbx/fbx2gltf_path = "/usr/bin/fbx2gltf"
 editors/2d/constrain_editor_view = false
@@ -172,12 +198,22 @@ export/android/wifi_remote_debug_host = "localhost"
 editors/3d_gizmos/gizmo_settings/path3d_tilt_disk_size = 0.8
 editors/3d_gizmos/gizmo_colors/path_tilt = Color(1, 1, 0.4, 0.9)
 export/android/java_sdk_path = ""
+network/language_server/poll_limit_usec = 100000
 shortcuts = [{
 "name": "script_text_editor/toggle_breakpoint",
 "shortcuts": []
 }, {
 "name": "editor/stop_running_project",
 "shortcuts": [SubResource("InputEventKey_j160b")]
+}, {
+"name": "script_text_editor/convert_to_uppercase",
+"shortcuts": []
+}, {
+"name": "script_text_editor/convert_to_lowercase",
+"shortcuts": []
+}, {
+"name": "script_text_editor/capitalize",
+"shortcuts": []
 }]
 builtin_action_overrides = [{
 "events": [SubResource("InputEventKey_w0iji")],
@@ -186,11 +222,17 @@ builtin_action_overrides = [{
 "events": [SubResource("InputEventKey_np1b4")],
 "name": "ui_page_down"
 }, {
-"events": [SubResource("InputEventKey_yum33")],
+"events": [SubResource("InputEventKey_yum33"), SubResource("InputEventKey_yguyn")],
 "name": "ui_down"
 }, {
-"events": [SubResource("InputEventKey_x315n")],
+"events": [SubResource("InputEventKey_x315n"), SubResource("InputEventKey_cb1d7")],
 "name": "ui_up"
+}, {
+"events": [SubResource("InputEventKey_wl0le"), SubResource("InputEventKey_b1a3l")],
+"name": "ui_left"
+}, {
+"events": [SubResource("InputEventKey_3sg1v"), SubResource("InputEventKey_3l1yj")],
+"name": "ui_right"
 }]
 metadata/script_setup_templates_dictionary = {
 "": "0ObjectEmpty",
@@ -257,6 +299,8 @@ metadata/script_setup_templates_dictionary = {
 "RefCo": "0ObjectEmpty",
 "RefCoi": "0ObjectEmpty",
 "RefCoiu": "0ObjectEmpty",
+"RefCop": "0ObjectEmpty",
+"RefCopu": "0ObjectEmpty",
 "RefCou": "0ObjectEmpty",
 "RefCoun": "0ObjectEmpty",
 "RefCount": "0ObjectEmpty",
@@ -267,7 +311,7 @@ metadata/script_setup_templates_dictionary = {
 "Resou": "0ObjectEmpty",
 "Resour": "0ObjectEmpty",
 "Resourc": "0ObjectEmpty",
-"Resource": "0ObjectEmpty",
+"Resource": "1ResourceTemplate With Styleguide",
 "Ress": "0ObjectEmpty",
 "Resso": "0ObjectEmpty",
 "Ressou": "0ObjectEmpty",

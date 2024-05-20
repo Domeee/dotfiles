@@ -68,11 +68,6 @@ alias gs="git status"
 alias ls='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias open="xdg-open"
-alias hexdocs="mix hex.docs online"
-# https://docs.unity3d.com/Manual/CommandLineArguments.html
-# -projectPath <pathname>
-UNITYVERSION="2021.3.2f1"
-alias unity="GDK_SCALE=2 GDK_DPI_SCALE=0.5 prime-run /home/dome/Unity/Hub/Editor/$UNITYVERSION/Editor/Unity -projectPath"
 alias sshk="kitty +kitten ssh"
 alias ai="sgpt"
 

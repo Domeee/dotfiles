@@ -1,5 +1,5 @@
 [Desktop Entry]
 Name=AI
-Exec=chatbox --enable-features=UseOzonePlatform --ozone-platform=wayland --uri=%U
+Exec=/opt/Chatbox/Chatbox-1.3.10-x86_64.AppImage --no-sandbox --enable-features=UseOzonePlatform --ozone-platform=wayland --uri=%U
 Terminal=false
 Type=Application

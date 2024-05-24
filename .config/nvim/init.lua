@@ -12,6 +12,7 @@ require("statusline")
 require("options")
 require("autopairs")
 require("alpha_custom")
+require("icons")
 
 -- requires options
 require("colorizer_custom")

@@ -44,7 +44,9 @@ require("paq")({
   "MunifTanjim/nui.nvim", -- required by chatgpt
   "jackMort/ChatGPT.nvim",
   -- misc start
-  "lukas-reineke/indent-blankline.nvim"
+  "lukas-reineke/indent-blankline.nvim",
+  "goolord/alpha-nvim",
+  "nvim-tree/nvim-web-devicons",
 })
 
 local home = vim.fn.expand("$HOME")

@@ -4,7 +4,7 @@ require("lualine").setup({
     theme = "mosel",
     component_separators = { left = "𐏓", right = "𐏓" },
     section_separators = {},
-    disabled_filetypes = { "dapui_stacks", "dapui_scopes", "dapui_watches", "dap-repl" },
+    disabled_filetypes = { "dapui_stacks", "dapui_scopes", "dapui_watches", "dap-repl", "alpha" },
     always_divide_middle = true,
   },
   sections = {

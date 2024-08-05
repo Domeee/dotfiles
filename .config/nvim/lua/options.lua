@@ -23,6 +23,9 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.smartindent = true
+-- spelling
+opt.spell = true
+opt.spelllang = "en,de"
 
 -- omnifunc completion, overriden by nvim-cmp
 o.completeopt = "menu,menuone,noselect"

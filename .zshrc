@@ -55,6 +55,9 @@ export ENERJOY_CONFIG_HOME=/home/dome/code/enerjoy
 export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/ripgrep.conf
 export QT_STYLE_OVERRIDE=adwaita-dark
 
+# Do not treat _ as part of a word
+export WORDCHARS="*?-.[]~=/&;!#$%^(){}<>_"
+
 ##
 # ALIAS
 ##

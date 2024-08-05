@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Terminal=true
+MimeType=inode/directory;
+Name=books
+Exec=ranger ~/data/03_resources/books

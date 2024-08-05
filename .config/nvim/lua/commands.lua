@@ -15,7 +15,7 @@ create_autocmd("BufEnter", {
 -- disable diagnostics for .env.* files, e.g. .env.dev
 create_autocmd("BufEnter", {
   pattern = { "*.dev", "*.test", "*.staging", "*.prod" },
-  callback = function(args)
-    vim.diagnostic.disable(args.buf)
+  callback = function (args)
+    vim.diagnostic.enable(false, args.buf)
   end
 })

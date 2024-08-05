@@ -58,6 +58,7 @@ interface/theme/contrast = 0.0
 interface/theme/base_spacing = 0
 interface/theme/additional_spacing = 4
 filesystem/external_programs/3d_model_editor = "/usr/bin/blender"
+filesystem/import/fbx/fbx2gltf_path = "/usr/bin/fbx2gltf"
 text_editor/theme/highlighting/symbol_color = Color(0.67, 0.79, 1, 1)
 text_editor/theme/highlighting/keyword_color = Color(1, 0.44, 0.52, 1)
 text_editor/theme/highlighting/control_flow_keyword_color = Color(1, 0.55, 0.8, 1)
@@ -96,7 +97,6 @@ network/connection/network_mode = 1
 network/tls/editor_tls_certificates = "/etc/ssl/certs/ca-certificates.crt"
 debugger/auto_switch_to_remote_scene_tree = true
 project_manager/default_renderer = "gl_compatibility"
-filesystem/import/fbx/fbx2gltf_path = "/usr/bin/fbx2gltf"
 editors/2d/constrain_editor_view = false
 asset_library/available_urls = {
 "godotengine.org (Official)": "https://godotengine.org/asset-library/api"
@@ -199,6 +199,12 @@ editors/3d_gizmos/gizmo_settings/path3d_tilt_disk_size = 0.8
 editors/3d_gizmos/gizmo_colors/path_tilt = Color(1, 1, 0.4, 0.9)
 export/android/java_sdk_path = ""
 network/language_server/poll_limit_usec = 100000
+gut/output_font_name = "CourierPrime"
+gut/output_font_size = 30
+gut/hide_result_tree = false
+gut/hide_output_text = false
+gut/hide_settings = true
+gut/use_colors = true
 shortcuts = [{
 "name": "script_text_editor/toggle_breakpoint",
 "shortcuts": []
@@ -242,6 +248,20 @@ metadata/script_setup_templates_dictionary = {
 "Acti": "0ObjectEmpty",
 "Actio": "0ObjectEmpty",
 "Action": "1RefCountedTemplate With Styleguide",
+"B": "0ObjectEmpty",
+"Bi": "0ObjectEmpty",
+"Bin": "0ObjectEmpty",
+"Bina": "0ObjectEmpty",
+"Binar": "0ObjectEmpty",
+"Binary": "0ObjectEmpty",
+"BinaryD": "0ObjectEmpty",
+"BinaryDe": "0ObjectEmpty",
+"BinaryDec": "0ObjectEmpty",
+"BinaryDeci": "0ObjectEmpty",
+"BinaryDecis": "0ObjectEmpty",
+"BinaryDecisi": "0ObjectEmpty",
+"BinaryDecisio": "0ObjectEmpty",
+"BinaryDecision": "1RefCountedTemplate With Styleguide",
 "CharacterBody3D": "0CharacterBody3DBasic Movement",
 "Control": "1NodeTemplate With Styleguide",
 "D": "0ObjectEmpty",
@@ -266,7 +286,11 @@ metadata/script_setup_templates_dictionary = {
 "GutT": "0ObjectEmpty",
 "GutTe": "0ObjectEmpty",
 "GutTes": "0ObjectEmpty",
-"GutTest": "1NodeTemplate With Styleguide",
+"GutTest": "1GutTestTemplate With Styleguide",
+"GutTt": "0ObjectEmpty",
+"GutTte": "0ObjectEmpty",
+"GutTtes": "0ObjectEmpty",
+"GutTtest": "0ObjectEmpty",
 "HBoxContainer": "0NodeDefault",
 "Label": "0NodeDefault",
 "MarginContainer": "1NodeTemplate With Styleguide",
@@ -293,9 +317,14 @@ metadata/script_setup_templates_dictionary = {
 "R4": "0ObjectEmpty",
 "R4e": "0ObjectEmpty",
 "R4ef": "0ObjectEmpty",
+"RNode": "0ObjectEmpty",
 "Re": "0ObjectEmpty",
+"ReNode": "0ObjectEmpty",
 "Ref": "0ObjectEmpty",
 "RefC": "0ObjectEmpty",
+"RefC9": "0ObjectEmpty",
+"RefC9o": "0ObjectEmpty",
+"RefC9ou": "0ObjectEmpty",
 "RefCo": "0ObjectEmpty",
 "RefCoi": "0ObjectEmpty",
 "RefCoiu": "0ObjectEmpty",
@@ -307,17 +336,39 @@ metadata/script_setup_templates_dictionary = {
 "RefCounte": "0ObjectEmpty",
 "RefCounted": "1RefCountedTemplate With Styleguide",
 "Res": "0ObjectEmpty",
+"ResNode": "0ObjectEmpty",
 "Reso": "0ObjectEmpty",
 "Resou": "0ObjectEmpty",
 "Resour": "0ObjectEmpty",
 "Resourc": "0ObjectEmpty",
 "Resource": "1ResourceTemplate With Styleguide",
 "Ress": "0ObjectEmpty",
+"RessNode": "0ObjectEmpty",
 "Resso": "0ObjectEmpty",
+"RessoNode": "0ObjectEmpty",
 "Ressou": "0ObjectEmpty",
+"RessouNode": "0ObjectEmpty",
 "Ressour": "0ObjectEmpty",
+"RessourNode": "0ObjectEmpty",
 "Ressourc": "0ObjectEmpty",
+"RessourcNode": "0ObjectEmpty",
 "Ressource": "0ObjectEmpty",
+"RessourceNode": "0ObjectEmpty",
+"Ressourcede": "0ObjectEmpty",
+"Ressourcee": "0ObjectEmpty",
+"Ressourceode": "0ObjectEmpty",
+"S": "0ObjectEmpty",
+"St": "0ObjectEmpty",
+"Sta": "0ObjectEmpty",
+"Stat": "0ObjectEmpty",
+"Statu": "0ObjectEmpty",
+"Status": "0ObjectEmpty",
+"StatusE": "0ObjectEmpty",
+"StatusEf": "0ObjectEmpty",
+"StatusEff": "0ObjectEmpty",
+"StatusEffe": "0ObjectEmpty",
+"StatusEffec": "0ObjectEmpty",
+"StatusEffect": "1ResourceTemplate With Styleguide",
 "T": "0ObjectEmpty",
 "Te": "0ObjectEmpty",
 "Tes": "0ObjectEmpty",

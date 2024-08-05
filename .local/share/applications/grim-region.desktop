@@ -1,4 +1,4 @@
 [Desktop Entry]
 Name=Screenshot Region
-Exec=grim -g "$(slurp)" - | wl-copy
+Exec=/home/dome/bin/grim_screenshot_region.sh
 Type=Application

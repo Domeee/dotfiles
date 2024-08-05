@@ -10,15 +10,13 @@ set $output_left DP-3
 set $output_middle DP-1
 set $output_right DP-2
 
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
 set $menu dmenu_path | j4-dmenu-desktop --dmenu="bemenu --ignorecase --prompt 'run' \
     --tb '#16161d' \
     --tf '#696983' \
     --fb '#2B2B3B' \
     --hf '#73CEF4' \
     --nf '#B9B9CA'" \
-    --term="kitty" | xargs swaymsg exec --
+    --term=kitty --i3-ipc
 
 focus_follows_mouse no
 
@@ -78,8 +76,10 @@ workspace $ws10 output $output_right
 ###############################
 for_window {
   # Utility workspace
-  [app_id="obsidian"] move container to workspace $ws10
-  [app_id="xyz.chatboxapp.app"] move container to workspace $ws10
+  [app_id="signal"] move container to workspace $ws10
+
+  # Knowledge working workspace
+  [app_id="obsidian"] move container to workspace $ws09
 
   # Specific workspaces
   [app_id="awakening"] move container to workspace $ws05
@@ -105,7 +105,7 @@ for_window {
 exec kitty --title __scratchpad
 
 bindsym $mod+s [title="__scratchpad"] scratchpad show
-for_window [title="__scratchpad"] move scratchpad, resize set 1200 800
+for_window [title="__scratchpad"] move scratchpad, resize set 800 600
 
 ##############################
 # BORDERS
@@ -271,6 +271,7 @@ exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec obsidian --ozone-platform-hint=auto %U
+exec signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland -- %u
 exec wlsunset -l 46.93 -L 7.56
 
 include /etc/sway/config.d/*

@@ -1,8 +1,20 @@
 {
-	"log": {
-		"prefix": [
-			"log"
-		],
-		"body": "Logger.debug($1)"
-	}
+  "log": {
+    "prefix": [
+      "log"
+    ],
+    "body": "Logger.debug($1)"
+  },
+  "ignore warning untyped declaration": {
+    "prefix": [
+      "warnuntyped"
+    ],
+    "body": "@warning_ignore(\"untyped_declaration\")"
+  },
+  "ignore warning unsafe call argument": {
+    "prefix": [
+      "warnunsafecallargument"
+    ],
+    "body": "@warning_ignore(\"unsafe_call_argument\")"
+  }
 }

@@ -1,3 +1,10 @@
 [Desktop Entry]
 Name=awakening
-Exec=/home/dome/code/godot/bin/godot.linuxbsd.editor.x86_64 --path /home/dome/code/awakening --editor --display-driver wayland
+Exec=godot --path /home/dome/code/awakening --editor --display-driver wayland
+Icon=godot
+Terminal=false
+PrefersNonDefaultGPU=true
+Type=Application
+MimeType=application/x-godot-project;
+Categories=Development;IDE;
+StartupWMClass=Godot

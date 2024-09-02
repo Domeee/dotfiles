@@ -94,7 +94,6 @@ text_editor/completion/code_complete_delay = 0.01
 run/window_placement/rect = 4
 run/platforms/linuxbsd/prefer_wayland = true
 network/connection/network_mode = 1
-network/tls/editor_tls_certificates = "/etc/ssl/certs/ca-certificates.crt"
 debugger/auto_switch_to_remote_scene_tree = true
 project_manager/default_renderer = "gl_compatibility"
 editors/2d/constrain_editor_view = false
@@ -140,7 +139,7 @@ text_editor/script_list/script_temperature_history_size = 15
 text_editor/script_list/group_help_pages = true
 text_editor/script_list/sort_scripts_by = 0
 text_editor/script_list/list_script_names_as = 0
-text_editor/external/exec_flags = "--servername /tmp/nvim.pipe --remote {file}"
+text_editor/external/exec_flags = "--servername /tmp/nvim.pipe +{line} {file}"
 editors/bone_mapper/handle_colors/unset = Color(0.3, 0.3, 0.3, 1)
 editors/bone_mapper/handle_colors/set = Color(0.1, 0.6, 0.25, 1)
 editors/bone_mapper/handle_colors/missing = Color(0.8, 0.2, 0.8, 1)
@@ -402,3 +401,4 @@ metadata/script_setup_templates_dictionary = {
 "refcountedQ": "0ObjectEmpty"
 }
 metadata/script_setup_use_script_templates = true
+metadata/export_template_download_directory = "/home/dome/Downloads"

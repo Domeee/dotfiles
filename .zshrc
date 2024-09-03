@@ -56,7 +56,9 @@ export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/ripgrep.conf
 export QT_STYLE_OVERRIDE=adwaita-dark
 
 # Do not treat _ as part of a word
-export WORDCHARS="*?-.[]~=/&;!#$%^(){}<>_"
+# Use single quote to circumvent unwanted expansions (https://superuser.com/a/847842)
+export WORDCHARS='*?-.[]~=/&;!#$%^(){}<>'
+
 
 ##
 # ALIAS
@@ -94,12 +96,15 @@ function awakening {
   ./awakening.sh $@
 }
 
+
 ##
 # KEYBINDINGS
 ##
 bindkey -v # zsh vim mode
+bindkey '^W' backward-delete-word
 bindkey '^ ' autosuggest-accept # <CTRL><SPACE> to accept
 bindkey -M viins '^l' vi-cmd-mode # exit insert mode with <CTRL>l
+bindkey '^R' history-incremental-search-backward 
 
 ##
 # MISC
@@ -107,6 +112,10 @@ bindkey -M viins '^l' vi-cmd-mode # exit insert mode with <CTRL>l
 source /usr/share/z/z.sh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/asdf-vm/asdf.sh
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
 
 ##
 # ZSH

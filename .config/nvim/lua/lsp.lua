@@ -18,7 +18,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 local lsp_formatting = function (bufnr)
   vim.lsp.buf.format({
     filter = function (client)
-      return (client.name ~= "tsserver") or (client.name ~= "gdscript")
+      return (client.name ~= "ts_ls") or (client.name ~= "gdscript")
     end,
     bufnr = bufnr,
   })
@@ -67,7 +67,7 @@ nvim_lsp.elixirls.setup({
 })
 
 -- TypeScript
-nvim_lsp.tsserver.setup({
+nvim_lsp.ts_ls.setup({
   capabilities = capabilities,
   on_attach = on_attach,
   -- https://github.com/typescript-language-server/typescript-language-server#initializationoptions

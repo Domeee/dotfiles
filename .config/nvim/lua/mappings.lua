@@ -72,7 +72,9 @@ vim.keymap.set("n", "<F6>", function () require("dap").step_over() end)
 vim.keymap.set("n", "<F7>", function () require("dap").step_into() end)
 vim.keymap.set("n", "<F8>", function () require("dap").step_out() end)
 vim.keymap.set("n", "<F9>", function () require("dap").disconnect() end)
+vim.keymap.set("n", "<F10>", function () require("dap").step_back() end)
 vim.keymap.set("n", "<leader>b", function () require("dap").toggle_breakpoint() end)
+vim.keymap.set("n", "<leader>gb", function () require("dap").run_to_cursor() end)
 
 -- ChatGPT
 vim.keymap.set("n", "<leader>cc", "<cmd>ChatGPT<CR>")

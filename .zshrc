@@ -55,9 +55,9 @@ export ENERJOY_CONFIG_HOME=/home/dome/code/enerjoy
 export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/ripgrep.conf
 export QT_STYLE_OVERRIDE=adwaita-dark
 
-# Do not treat _ as part of a word
+# Do not treat _ - / as part of a word
 # Use single quote to circumvent unwanted expansions (https://superuser.com/a/847842)
-export WORDCHARS='*?-.[]~=/&;!#$%^(){}<>'
+export WORDCHARS='*?.[]~=&;!#$%^(){}<>'
 
 
 ##
@@ -94,6 +94,10 @@ function enerjoy {
 
 function awakening {
   ./awakening.sh $@
+}
+
+function logf {
+  tail -f $@ | fzf --tail 100000 --tac --no-sort --exact --wrap
 }
 
 

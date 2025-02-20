@@ -55,6 +55,13 @@ export ENERJOY_CONFIG_HOME=/home/dome/code/enerjoy
 export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/ripgrep.conf
 export QT_STYLE_OVERRIDE=adwaita-dark
 
+# ASDF-VM
+export PATH=$PATH:${ASDF_DATA_DIR:-$HOME/.asdf}/shims
+export ASDF_DATA_DIR=$HOME/.config/asdf
+
+# Ranger
+export FZF_MARKS_FILE=$HOME/.config/ranger/plugins/fzf-marks/.fzf-marks
+
 # Do not treat _ - / as part of a word
 # Use single quote to circumvent unwanted expansions (https://superuser.com/a/847842)
 export WORDCHARS='*?.[]~=&;!#$%^(){}<>'
@@ -92,8 +99,8 @@ function enerjoy {
   ./bin/enerjoy.sh $@
 }
 
-function awakening {
-  ./awakening.sh $@
+function darkheit {
+  ./darkheit.sh $@
 }
 
 function logf {
@@ -115,7 +122,6 @@ bindkey '^R' history-incremental-search-backward
 ##
 source /usr/share/z/z.sh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/asdf-vm/asdf.sh
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
@@ -128,6 +134,7 @@ setopt autocd extendedglob nomatch notify
 unsetopt beep
 zstyle :compinstall filename '/home/dome/.zshrc'
 zstyle ':completion:*' completer _complete _ignored _approximate
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 autoload -Uz compinit promptinit vcs_info zcalc
 compinit
 promptinit

@@ -1,6 +1,0 @@
-pkgname=erlang-nox-standin
-pkgver=0.1
-pkgrel=1
-pkgdesc="standin package for erlang-nox"
-arch=('any')
-provides=('erlang-nox')

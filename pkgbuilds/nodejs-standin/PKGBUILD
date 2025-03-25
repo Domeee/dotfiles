@@ -3,4 +3,4 @@ pkgver=0.1
 pkgrel=1
 pkgdesc="standin package for nodejs"
 arch=('any')
-provides=('nodejs')
+provides=('nodejs' 'npm')

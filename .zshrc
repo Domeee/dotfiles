@@ -56,8 +56,9 @@ export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/ripgrep.conf
 export QT_STYLE_OVERRIDE=adwaita-dark
 
 # ASDF-VM
-export PATH=$PATH:${ASDF_DATA_DIR:-$HOME/.asdf}/shims
+export ASDF_DIR=$HOME/.config/asdf
 export ASDF_DATA_DIR=$HOME/.config/asdf
+export PATH=$PATH:$ASDF_DATA_DIR/shims
 
 # Ranger
 export FZF_MARKS_FILE=$HOME/.config/ranger/plugins/fzf-marks/.fzf-marks
@@ -134,7 +135,7 @@ setopt autocd extendedglob nomatch notify
 unsetopt beep
 zstyle :compinstall filename '/home/dome/.zshrc'
 zstyle ':completion:*' completer _complete _ignored _approximate
-fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+fpath=(${ASDF_DATA_DIR}/completions $fpath)
 autoload -Uz compinit promptinit vcs_info zcalc
 compinit
 promptinit

@@ -16,5 +16,17 @@
       "warnunsafecallargument"
     ],
     "body": "@warning_ignore(\"unsafe_call_argument\")"
+  },
+  "ignore warning unsafe method access": {
+    "prefix": [
+      "warnunsafemethodaccess"
+    ],
+    "body": "@warning_ignore(\"unsafe_method_access\")"
+  },
+  "ignore warning property access": {
+    "prefix": [
+      "warnunsafepropertyaccess"
+    ],
+    "body": "@warning_ignore(\"unsafe_property_access\")"
   }
 }

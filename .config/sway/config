@@ -76,7 +76,6 @@ workspace $ws10 output $output_right
 ###############################
 for_window {
   # Utility workspace
-  [app_id="signal"] move container to workspace $ws10
 
   # Knowledge working workspace
   [app_id="obsidian"] move container to workspace $ws09
@@ -271,7 +270,6 @@ exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec obsidian --ozone-platform-hint=auto %U
-exec signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland -- %u
 exec wlsunset -l 46.93 -L 7.56
 
 include /etc/sway/config.d/*

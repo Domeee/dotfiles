@@ -23,7 +23,6 @@
 !.config/gtk-4.0/
 !.config/kitty/
 !.config/nvim/
-!.config/nvim/lua
 !.config/pipewire/
 !.config/ranger/
 !.config/ripgrep/
@@ -47,6 +46,7 @@
 !.config/gtk-3.0/**
 !.config/gtk-4.0/**
 !.config/kitty/**
+!.config/nvim/**
 !.config/pipewire/**
 !.config/ranger/**
 !.config/ripgrep/**

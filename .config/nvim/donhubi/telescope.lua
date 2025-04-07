@@ -12,7 +12,7 @@ telescope.setup({
     },
     path_display = { "tail" },
     dynamic_preview_title = true,
-  },
+  }
 })
 
 telescope.load_extension("fzf")

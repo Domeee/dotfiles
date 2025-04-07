@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Godot 4.4
+Exec=/opt/godot-4.4/bin/godot.linuxbsd.editor.x86_64 --display-driver wayland %f
+Terminal=false
+PrefersNonDefaultGPU=true
+Type=Application
+MimeType=application/x-godot-project;
+Categories=Development;IDE;
+StartupWMClass=Godot

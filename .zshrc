@@ -108,6 +108,15 @@ function logf {
   tail -f $@ | fzf --tail 100000 --tac --no-sort --exact --wrap
 }
 
+function swayconfig {
+  if [[ $1 == "default" ]]; then
+    /home/dome/bin/swayconfig.default.sh
+  fi
+
+  if [[ $1 == "gaming" ]]; then
+    /home/dome/bin/swayconfig.gaming.sh
+  fi
+}
 
 ##
 # KEYBINDINGS

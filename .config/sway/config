@@ -27,9 +27,9 @@ floating_modifier $mod
 ###############################
 
 # swaymsg -t get_outputs; man 5 sway-output
+output $output_left scale 2 pos 0 0
 output $output_middle scale 2 pos 1920 0
 output $output_right scale 2 pos 3840 0
-output $output_left scale 2 pos 0 0
 
 # requires swaybg
 output * bg #16161D solid_color

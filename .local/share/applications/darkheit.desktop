@@ -1,7 +1,6 @@
 [Desktop Entry]
-Name=awakening
-Exec=godot --path /home/dome/code/awakening --editor --display-driver wayland
-Icon=godot
+Name=darkheit
+Exec=/opt/godot-4.4/bin/godot.linuxbsd.editor.x86_64 --display-driver wayland --path /home/dome/code/awakening --editor
 Terminal=false
 PrefersNonDefaultGPU=true
 Type=Application

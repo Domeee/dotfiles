@@ -1,0 +1,597 @@
+[gd_resource type="EditorSettings" load_steps=13 format=3]
+
+[sub_resource type="InputEventKey" id="InputEventKey_w0iji"]
+device = -1
+ctrl_pressed = true
+keycode = 85
+
+[sub_resource type="InputEventKey" id="InputEventKey_np1b4"]
+device = -1
+ctrl_pressed = true
+keycode = 68
+
+[sub_resource type="InputEventKey" id="InputEventKey_yum33"]
+device = -1
+keycode = 74
+unicode = 106
+
+[sub_resource type="InputEventKey" id="InputEventKey_yguyn"]
+device = -1
+physical_keycode = 4194322
+
+[sub_resource type="InputEventKey" id="InputEventKey_x315n"]
+device = -1
+keycode = 75
+unicode = 107
+
+[sub_resource type="InputEventKey" id="InputEventKey_cb1d7"]
+device = -1
+physical_keycode = 4194320
+
+[sub_resource type="InputEventKey" id="InputEventKey_wl0le"]
+keycode = 4194319
+
+[sub_resource type="InputEventKey" id="InputEventKey_b1a3l"]
+device = -1
+physical_keycode = 72
+unicode = 104
+
+[sub_resource type="InputEventKey" id="InputEventKey_3sg1v"]
+keycode = 4194321
+
+[sub_resource type="InputEventKey" id="InputEventKey_3l1yj"]
+device = -1
+physical_keycode = 76
+unicode = 108
+
+[sub_resource type="InputEventKey" id="InputEventKey_j160b"]
+device = -1
+physical_keycode = 4194340
+
+[sub_resource type="InputEventKey" id="InputEventKey_ouha5"]
+keycode = 4194326
+
+[resource]
+interface/editor/show_update_spinner = false
+interface/theme/spacing_preset = "Compact"
+interface/theme/base_color = Color(0.21, 0.24, 0.29, 1)
+interface/theme/accent_color = Color(0.44, 0.73, 0.98, 1)
+interface/theme/contrast = 0.3
+interface/theme/base_spacing = 0
+interface/theme/additional_spacing = 4
+filesystem/external_programs/3d_model_editor = "/usr/bin/blender"
+filesystem/import/fbx/fbx2gltf_path = "/usr/bin/fbx2gltf"
+text_editor/behavior/files/open_dominant_script_on_scene_change = true
+text_editor/external/exec_path = "/usr/bin/nvr"
+text_editor/external/exec_flags = "--servername /tmp/nvim.pipe +{line} {file}"
+text_editor/completion/idle_parse_delay = 0.1
+text_editor/completion/code_complete_delay = 0.01
+text_editor/external/use_external_editor = true
+editors/3d_gizmos/gizmo_settings/bone_axis_length = 0.1
+run/window_placement/rect = 4
+run/platforms/linuxbsd/prefer_wayland = true
+network/connection/network_mode = 1
+debugger/auto_switch_to_remote_scene_tree = true
+project_manager/default_renderer = "gl_compatibility"
+editors/2d/constrain_editor_view = false
+export/android/android_sdk_path = ""
+export/android/debug_keystore = ""
+export/android/debug_keystore_pass = "android"
+export/macos/rcodesign = ""
+export/web/http_port = 8060
+export/web/tls_key = ""
+export/web/tls_certificate = ""
+export/windows/rcedit = ""
+export/windows/osslsigncode = ""
+export/windows/wine = ""
+_default_feature_profile = ""
+_use_favorites_root_selection = false
+network/debug_adapter/request_timeout = 1000
+network/debug_adapter/sync_breakpoints = true
+editors/3d_gizmos/gizmo_colors/path = Color(0.5, 0.5, 1, 0.8)
+editors/grid_map/editor_side = 1
+network/language_server/use_thread = true
+export/android/java_sdk_path = ""
+gut/output_font_name = "CourierPrime"
+gut/output_font_size = 30
+gut/hide_result_tree = false
+gut/hide_output_text = false
+gut/hide_settings = true
+gut/use_colors = true
+_editor_settings_advanced_mode = false
+_project_settings_advanced_mode = false
+_export_template_download_directory = ""
+_script_setup_templates_dictionary = {
+"Control": "1ControlTemplate With Styleguide",
+"D": "0ObjectEmpty",
+"De": "0ObjectEmpty",
+"Dec": "0ObjectEmpty",
+"Deci": "0ObjectEmpty",
+"Decis": "0ObjectEmpty",
+"Decisi": "0ObjectEmpty",
+"Decisio": "0ObjectEmpty",
+"Decision": "0ObjectEmpty",
+"DecisionT": "0ObjectEmpty",
+"DecisionTr": "0ObjectEmpty",
+"DecisionTre": "0ObjectEmpty",
+"DecisionTree": "0ObjectEmpty",
+"DecisionTreeD": "0ObjectEmpty",
+"DecisionTreeDe": "0ObjectEmpty",
+"DecisionTreeDec": "0ObjectEmpty",
+"DecisionTreeDeci": "0ObjectEmpty",
+"DecisionTreeDecis": "0ObjectEmpty",
+"DecisionTreeDecisi": "0ObjectEmpty",
+"DecisionTreeDecisio": "0ObjectEmpty",
+"DecisionTreeDecision": "1RefCountedTemplate With Styleguide",
+"Node": "1NodeTemplate With Styleguide",
+"PanelContainer": "1ControlTemplate With Styleguide",
+"VBoxContainer": "1ControlTemplate With Styleguide"
+}
+_script_setup_use_script_templates = true
+shortcuts = [{
+"name": "script_text_editor/toggle_breakpoint",
+"shortcuts": []
+}, {
+"name": "editor/stop_running_project",
+"shortcuts": [SubResource("InputEventKey_j160b")]
+}, {
+"name": "script_text_editor/convert_to_uppercase",
+"shortcuts": []
+}, {
+"name": "script_text_editor/convert_to_lowercase",
+"shortcuts": []
+}, {
+"name": "script_text_editor/capitalize",
+"shortcuts": []
+}, {
+"name": "spatial_editor/viewport_zoom_modifier_1",
+"shortcuts": [SubResource("InputEventKey_ouha5")]
+}, {
+"name": "spatial_editor/viewport_zoom_modifier_2",
+"shortcuts": []
+}]
+builtin_action_overrides = [{
+"events": [SubResource("InputEventKey_w0iji")],
+"name": "ui_page_up"
+}, {
+"events": [SubResource("InputEventKey_np1b4")],
+"name": "ui_page_down"
+}, {
+"events": [SubResource("InputEventKey_yum33"), SubResource("InputEventKey_yguyn")],
+"name": "ui_down"
+}, {
+"events": [SubResource("InputEventKey_x315n"), SubResource("InputEventKey_cb1d7")],
+"name": "ui_up"
+}, {
+"events": [SubResource("InputEventKey_wl0le"), SubResource("InputEventKey_b1a3l")],
+"name": "ui_left"
+}, {
+"events": [SubResource("InputEventKey_3sg1v"), SubResource("InputEventKey_3l1yj")],
+"name": "ui_right"
+}]
+metadata/script_setup_templates_dictionary = {
+"": "0ObjectEmpty",
+" ": "0ObjectEmpty",
+" D": "0ObjectEmpty",
+"A": "0ObjectEmpty",
+"Ac": "0ObjectEmpty",
+"Act": "0ObjectEmpty",
+"Acti": "0ObjectEmpty",
+"Actio": "0ObjectEmpty",
+"Action": "0ObjectEmpty",
+"ActionC": "0ObjectEmpty",
+"ActionCo": "0ObjectEmpty",
+"ActionCon": "0ObjectEmpty",
+"ActionCont": "0ObjectEmpty",
+"ActionConte": "0ObjectEmpty",
+"ActionContex": "0ObjectEmpty",
+"ActionContext": "1RefCountedTemplate With Styleguide",
+"B": "0ObjectEmpty",
+"Bi": "0ObjectEmpty",
+"Bin": "0ObjectEmpty",
+"Bina": "0ObjectEmpty",
+"Binar": "0ObjectEmpty",
+"Binary": "0ObjectEmpty",
+"BinaryD": "0ObjectEmpty",
+"BinaryDe": "0ObjectEmpty",
+"BinaryDec": "0ObjectEmpty",
+"BinaryDeci": "0ObjectEmpty",
+"BinaryDecis": "0ObjectEmpty",
+"BinaryDecisi": "0ObjectEmpty",
+"BinaryDecisio": "0ObjectEmpty",
+"BinaryDecision": "1RefCountedTemplate With Styleguide",
+"C": "0ObjectEmpty",
+"Ch": "0ObjectEmpty",
+"Cha": "0ObjectEmpty",
+"Char": "0ObjectEmpty",
+"Chara": "0ObjectEmpty",
+"Charac": "0ObjectEmpty",
+"Charact": "0ObjectEmpty",
+"Characte": "0ObjectEmpty",
+"Character": "1NodeTemplate With Styleguide",
+"CharacterB": "0ObjectEmpty",
+"CharacterBe": "0ObjectEmpty",
+"CharacterBeh": "0ObjectEmpty",
+"CharacterBeha": "0ObjectEmpty",
+"CharacterBehav": "0ObjectEmpty",
+"CharacterBehavi": "0ObjectEmpty",
+"CharacterBehavio": "0ObjectEmpty",
+"CharacterBehavior": "1RefCountedTemplate With Styleguide",
+"CharacterBh": "0ObjectEmpty",
+"CharacterBhe": "0ObjectEmpty",
+"CharacterBody3D": "0CharacterBody3DBasic Movement",
+"Co": "0ObjectEmpty",
+"Com": "0ObjectEmpty",
+"Comb": "0ObjectEmpty",
+"Comba": "0ObjectEmpty",
+"Combat": "0ObjectEmpty",
+"Combat ": "0ObjectEmpty",
+"CombatA": "0ObjectEmpty",
+"CombatAc": "0ObjectEmpty",
+"CombatAct": "0ObjectEmpty",
+"CombatActi": "0ObjectEmpty",
+"CombatActio": "0ObjectEmpty",
+"CombatAction": "1RefCountedTemplate With Styleguide",
+"Control": "1NodeTemplate With Styleguide",
+"D": "0ObjectEmpty",
+"De": "0ObjectEmpty",
+"Dec": "0ObjectEmpty",
+"Deci": "0ObjectEmpty",
+"Decis": "0ObjectEmpty",
+"Decisi": "0ObjectEmpty",
+"Decisio": "0ObjectEmpty",
+"Decision": "0ObjectEmpty",
+"DecisionT": "0ObjectEmpty",
+"DecisionTr": "0ObjectEmpty",
+"DecisionTre": "0ObjectEmpty",
+"DecisionTree": "0ObjectEmpty",
+"DecisionTreeA": "0ObjectEmpty",
+"DecisionTreeAc": "0ObjectEmpty",
+"DecisionTreeAct": "0ObjectEmpty",
+"DecisionTreeActi": "0ObjectEmpty",
+"DecisionTreeActio": "0ObjectEmpty",
+"DecisionTreeAction": "1RefCountedTemplate With Styleguide",
+"DecisionTreeD": "0ObjectEmpty",
+"DecisionTreeDe": "0ObjectEmpty",
+"DecisionTreeDec": "0ObjectEmpty",
+"DecisionTreeDeci": "0ObjectEmpty",
+"DecisionTreeDecis": "0ObjectEmpty",
+"DecisionTreeDecisi": "0ObjectEmpty",
+"DecisionTreeDecisio": "0ObjectEmpty",
+"DecisionTreeDecision": "1RefCountedTemplate With Styleguide",
+"DecisionTreeN": "0ObjectEmpty",
+"DecisionTreeNo": "0ObjectEmpty",
+"DecisionTreeNod": "0ObjectEmpty",
+"DecisionTreeNode": "1RefCountedTemplate With Styleguide",
+"Du": "0ObjectEmpty",
+"Dur": "0ObjectEmpty",
+"Dura": "0ObjectEmpty",
+"Durat": "0ObjectEmpty",
+"Durati": "0ObjectEmpty",
+"Duratio": "0ObjectEmpty",
+"Duration": "1ResourceTemplate With Styleguide",
+"F": "0ObjectEmpty",
+"Fi": "0ObjectEmpty",
+"Fie": "0ObjectEmpty",
+"Fiel": "0ObjectEmpty",
+"Field": "1NodeTemplate With Styleguide",
+"FieldH": "0ObjectEmpty",
+"FieldHi": "0ObjectEmpty",
+"FieldHig": "0ObjectEmpty",
+"FieldHigh": "0ObjectEmpty",
+"FieldHighl": "0ObjectEmpty",
+"FieldHighli": "0ObjectEmpty",
+"FieldHighlig": "0ObjectEmpty",
+"FieldHighligh": "0ObjectEmpty",
+"FieldHighlight": "0ObjectEmpty",
+"FieldHighlightS": "0ObjectEmpty",
+"FieldHighlightSt": "0ObjectEmpty",
+"FieldHighlightStr": "0ObjectEmpty",
+"FieldHighlightStra": "0ObjectEmpty",
+"FieldHighlightStrat": "0ObjectEmpty",
+"FieldHighlightStrate": "0ObjectEmpty",
+"FieldHighlightStrateg": "0ObjectEmpty",
+"FieldHighlightStrategy": "0ObjectEmpty",
+"FieldS": "0ObjectEmpty",
+"FieldSe": "0ObjectEmpty",
+"FieldSel": "0ObjectEmpty",
+"FieldSele": "0ObjectEmpty",
+"FieldSelec": "0ObjectEmpty",
+"FieldSelect": "0ObjectEmpty",
+"FieldSelecti": "0ObjectEmpty",
+"FieldSelectio": "0ObjectEmpty",
+"FieldSelection": "0ObjectEmpty",
+"FieldSelectionS": "0ObjectEmpty",
+"FieldSelectionSt": "0ObjectEmpty",
+"FieldSelectionStr": "0ObjectEmpty",
+"FieldSelectionStra": "0ObjectEmpty",
+"FieldSelectionStrat": "0ObjectEmpty",
+"FieldSelectionStrate": "0ObjectEmpty",
+"FieldSelectionStrateg": "0ObjectEmpty",
+"FieldSelectionStrategf": "0ObjectEmpty",
+"FieldSelectionStrategfy": "0ObjectEmpty",
+"FieldSelectionStrategy": "1RefCountedTemplate With Styleguide",
+"G": "0ObjectEmpty",
+"Gu": "0ObjectEmpty",
+"Gut": "0ObjectEmpty",
+"GutT": "0ObjectEmpty",
+"GutTe": "0ObjectEmpty",
+"GutTes": "0ObjectEmpty",
+"GutTest": "1GutTestTemplate With Styleguide",
+"GutTt": "0ObjectEmpty",
+"GutTte": "0ObjectEmpty",
+"GutTtes": "0ObjectEmpty",
+"GutTtest": "0ObjectEmpty",
+"H": "0ObjectEmpty",
+"HB": "0ObjectEmpty",
+"HBo": "0ObjectEmpty",
+"HBox": "0ObjectEmpty",
+"HBoxC": "0ObjectEmpty",
+"HBoxCo": "0ObjectEmpty",
+"HBoxCon": "0ObjectEmpty",
+"HBoxCont": "0ObjectEmpty",
+"HBoxConta": "0ObjectEmpty",
+"HBoxContai": "0ObjectEmpty",
+"HBoxContain": "0ObjectEmpty",
+"HBoxContaine": "0ObjectEmpty",
+"HBoxContainer": "1NodeTemplate With Styleguide",
+"I": "0ObjectEmpty",
+"In": "0ObjectEmpty",
+"Inf": "0ObjectEmpty",
+"Infl": "0ObjectEmpty",
+"Influ": "0ObjectEmpty",
+"Influe": "0ObjectEmpty",
+"Influen": "0ObjectEmpty",
+"Influenc": "0ObjectEmpty",
+"Influence": "0ObjectEmpty",
+"InfluenceM": "0ObjectEmpty",
+"InfluenceMa": "0ObjectEmpty",
+"InfluenceMap": "1RefCountedTemplate With Styleguide",
+"It": "0ObjectEmpty",
+"Ite": "0ObjectEmpty",
+"Item": "1RefCountedTemplate With Styleguide",
+"ItemJ": "0ObjectEmpty",
+"ItemJa": "0ObjectEmpty",
+"ItemM": "0ObjectEmpty",
+"ItemMa": "0ObjectEmpty",
+"ItemMas": "0ObjectEmpty",
+"ItemMast": "0ObjectEmpty",
+"ItemMaste": "0ObjectEmpty",
+"ItemMaster": "0ObjectEmpty",
+"ItemMasterD": "0ObjectEmpty",
+"ItemMasterDa": "0ObjectEmpty",
+"ItemMasterDat": "0ObjectEmpty",
+"ItemMasterData": "1ResourceTemplate With Styleguide",
+"Itr": "0ObjectEmpty",
+"Itre": "0ObjectEmpty",
+"Itrem": "0ObjectEmpty",
+"Label": "0NodeDefault",
+"M": "0ObjectEmpty",
+"Ma": "0ObjectEmpty",
+"Map": "0ObjectEmpty",
+"MapC": "0ObjectEmpty",
+"MapCo": "0ObjectEmpty",
+"MapCon": "0ObjectEmpty",
+"MapConf": "0ObjectEmpty",
+"MapConfi": "0ObjectEmpty",
+"MapConfig": "1ResourceTemplate With Styleguide",
+"MarginContainer": "1NodeTemplate With Styleguide",
+"MeshInstance3D": "0NodeDefault",
+"N": "0ObjectEmpty",
+"No": "0ObjectEmpty",
+"Nod": "0ObjectEmpty",
+"Node": "1NodeTemplate With Styleguide",
+"Node2": "0ObjectEmpty",
+"Node2D": "1NodeTemplate With Styleguide",
+"Node2d": "0ObjectEmpty",
+"Node3D": "0NodeDefault",
+"PanelContainer": "0NodeDefault",
+"Q": "0ObjectEmpty",
+"Qu": "0ObjectEmpty",
+"Que": "0ObjectEmpty",
+"Queu": "0ObjectEmpty",
+"Queue": "1RefCountedTemplate With Styleguide",
+"QueueN": "0ObjectEmpty",
+"QueueNo": "0ObjectEmpty",
+"QueueNod": "0ObjectEmpty",
+"QueueNode": "1RefCountedTemplate With Styleguide",
+"R": "0ObjectEmpty",
+"R4": "0ObjectEmpty",
+"R4e": "0ObjectEmpty",
+"R4ef": "0ObjectEmpty",
+"RNode": "0ObjectEmpty",
+"Re": "0ObjectEmpty",
+"ReNode": "0ObjectEmpty",
+"Ref": "0ObjectEmpty",
+"RefC": "0ObjectEmpty",
+"RefC9": "0ObjectEmpty",
+"RefC9o": "0ObjectEmpty",
+"RefC9ou": "0ObjectEmpty",
+"RefCo": "0ObjectEmpty",
+"RefCoi": "0ObjectEmpty",
+"RefCoiu": "0ObjectEmpty",
+"RefCop": "0ObjectEmpty",
+"RefCopu": "0ObjectEmpty",
+"RefCou": "0ObjectEmpty",
+"RefCoun": "0ObjectEmpty",
+"RefCount": "0ObjectEmpty",
+"RefCounte": "0ObjectEmpty",
+"RefCounted": "1RefCountedTemplate With Styleguide",
+"Res": "0ObjectEmpty",
+"ResNode": "0ObjectEmpty",
+"Reso": "0ObjectEmpty",
+"Resou": "0ObjectEmpty",
+"Resour": "0ObjectEmpty",
+"Resourc": "0ObjectEmpty",
+"Resource": "1ResourceTemplate With Styleguide",
+"Resouz": "0ObjectEmpty",
+"Resouzr": "0ObjectEmpty",
+"Ress": "0ObjectEmpty",
+"RessNode": "0ObjectEmpty",
+"Resso": "0ObjectEmpty",
+"RessoNode": "0ObjectEmpty",
+"Ressou": "0ObjectEmpty",
+"RessouNode": "0ObjectEmpty",
+"Ressour": "0ObjectEmpty",
+"RessourNode": "0ObjectEmpty",
+"Ressourc": "0ObjectEmpty",
+"RessourcNode": "0ObjectEmpty",
+"Ressource": "0ObjectEmpty",
+"RessourceNode": "0ObjectEmpty",
+"Ressourcede": "0ObjectEmpty",
+"Ressourcee": "0ObjectEmpty",
+"Ressourceode": "0ObjectEmpty",
+"S": "0ObjectEmpty",
+"SNode": "0ObjectEmpty",
+"ScrollContainer": "1NodeTemplate With Styleguide",
+"Sk": "0ObjectEmpty",
+"Ski": "0ObjectEmpty",
+"Skil": "0ObjectEmpty",
+"Skill": "1ResourceTemplate With Styleguide",
+"SkillA": "0ObjectEmpty",
+"SkillAc": "0ObjectEmpty",
+"SkillAct": "0ObjectEmpty",
+"SkillActi": "0ObjectEmpty",
+"SkillActio": "0ObjectEmpty",
+"SkillAction": "1RefCountedTemplate With Styleguide",
+"SkillActionB": "0ObjectEmpty",
+"SkillActionBu": "0ObjectEmpty",
+"SkillActionBut": "0ObjectEmpty",
+"SkillActionButt": "0ObjectEmpty",
+"SkillActionButto": "0ObjectEmpty",
+"SkillActionButton": "1NodeTemplate With Styleguide",
+"SkillB": "0ObjectEmpty",
+"SkillBu": "0ObjectEmpty",
+"SkillBut": "0ObjectEmpty",
+"SkillButt": "0ObjectEmpty",
+"SkillButto": "0ObjectEmpty",
+"SkillButton": "1NodeTemplate With Styleguide",
+"SkillP": "0ObjectEmpty",
+"SkillPr": "0ObjectEmpty",
+"SkillPre": "0ObjectEmpty",
+"SkillPrec": "0ObjectEmpty",
+"SkillPreco": "0ObjectEmpty",
+"SkillPrecod": "0ObjectEmpty",
+"SkillPrecodn": "0ObjectEmpty",
+"SkillPrecodni": "0ObjectEmpty",
+"SkillPrecodnit": "0ObjectEmpty",
+"SkillPrecodniti": "0ObjectEmpty",
+"SkillPrecodnitio": "0ObjectEmpty",
+"SkillPrecodnition": "0ObjectEmpty",
+"SkillPrecon": "0ObjectEmpty",
+"SkillPrecond": "0ObjectEmpty",
+"SkillPrecondi": "0ObjectEmpty",
+"SkillPrecondit": "0ObjectEmpty",
+"SkillPreconditi": "0ObjectEmpty",
+"SkillPreconditio": "0ObjectEmpty",
+"SkillPrecondition": "1RefCountedTemplate With Styleguide",
+"SkillS": "0ObjectEmpty",
+"SkillSe": "0ObjectEmpty",
+"SkillSel": "0ObjectEmpty",
+"SkillSele": "0ObjectEmpty",
+"SkillSelec": "0ObjectEmpty",
+"SkillSelect": "0ObjectEmpty",
+"SkillSelecti": "0ObjectEmpty",
+"SkillSelectio": "0ObjectEmpty",
+"SkillSelection": "0ObjectEmpty",
+"SkillSelectionS": "0ObjectEmpty",
+"SkillSelectionSt": "0ObjectEmpty",
+"SkillSelectionStr": "0ObjectEmpty",
+"SkillSelectionStra": "0ObjectEmpty",
+"SkillSelectionStrat": "0ObjectEmpty",
+"SkillSelectionStrate": "0ObjectEmpty",
+"SkillSelectionStrateg": "0ObjectEmpty",
+"SkillSelectionStrategy": "0ObjectEmpty",
+"St": "0ObjectEmpty",
+"StNode": "0ObjectEmpty",
+"Sta": "0ObjectEmpty",
+"StaNode": "0ObjectEmpty",
+"Stat": "0ObjectEmpty",
+"StatNode": "0ObjectEmpty",
+"Statu": "0ObjectEmpty",
+"StatuNode": "0ObjectEmpty",
+"Status": "0ObjectEmpty",
+"StatusE": "0ObjectEmpty",
+"StatusENode": "0ObjectEmpty",
+"StatusEf": "0ObjectEmpty",
+"StatusEfNode": "0ObjectEmpty",
+"StatusEff": "0ObjectEmpty",
+"StatusEffNode": "0ObjectEmpty",
+"StatusEffe": "0ObjectEmpty",
+"StatusEffeNode": "0ObjectEmpty",
+"StatusEffec": "0ObjectEmpty",
+"StatusEffecNode": "0ObjectEmpty",
+"StatusEffect": "1ResourceTemplate With Styleguide",
+"StatusEffectC": "0ObjectEmpty",
+"StatusEffectCo": "0ObjectEmpty",
+"StatusEffectCom": "0ObjectEmpty",
+"StatusEffectComb": "0ObjectEmpty",
+"StatusEffectComba": "0ObjectEmpty",
+"StatusEffectCombat": "0ObjectEmpty",
+"StatusEffectCombatA": "0ObjectEmpty",
+"StatusEffectCombatAc": "0ObjectEmpty",
+"StatusEffectCombatAct": "0ObjectEmpty",
+"StatusEffectCombatActi": "0ObjectEmpty",
+"StatusEffectCombatActio": "0ObjectEmpty",
+"StatusEffectCombatAction": "1RefCountedTemplate With Styleguide",
+"StatusEffectCombatActionC": "0ObjectEmpty",
+"StatusEffectCombatActionCo": "0ObjectEmpty",
+"StatusEffectCombatActionCon": "0ObjectEmpty",
+"StatusEffectCombatActionCont": "0ObjectEmpty",
+"StatusEffectCombatActionConte": "0ObjectEmpty",
+"StatusEffectCombatActionContex": "0ObjectEmpty",
+"StatusEffectCombatActionContext": "1RefCountedTemplate With Styleguide",
+"StatusEffectNode": "0ObjectEmpty",
+"StatusEffectde": "0ObjectEmpty",
+"StatusEffecte": "0ObjectEmpty",
+"StatusEffectode": "0ObjectEmpty",
+"StatusNode": "0ObjectEmpty",
+"Statuse": "0ObjectEmpty",
+"Statusef": "0ObjectEmpty",
+"Statuseff": "0ObjectEmpty",
+"Statuseffe": "0ObjectEmpty",
+"Statuseffec": "0ObjectEmpty",
+"Statuseffect": "0ObjectEmpty",
+"StatuseffectC": "0ObjectEmpty",
+"StatuseffectCo": "0ObjectEmpty",
+"StatuseffectCom": "0ObjectEmpty",
+"T": "0ObjectEmpty",
+"Te": "0ObjectEmpty",
+"Tes": "0ObjectEmpty",
+"Test": "0ObjectEmpty",
+"TextureButton": "1NodeTemplate With Styleguide",
+"VBoxContainer": "1NodeTemplate With Styleguide",
+"e": "0ObjectEmpty",
+"p": "0ObjectEmpty",
+"pr": "0ObjectEmpty",
+"pri": "0ObjectEmpty",
+"prio": "0ObjectEmpty",
+"prior": "0ObjectEmpty",
+"priori": "0ObjectEmpty",
+"priorit": "0ObjectEmpty",
+"priority": "0ObjectEmpty",
+"priority_": "0ObjectEmpty",
+"priority_q": "0ObjectEmpty",
+"priority_qu": "0ObjectEmpty",
+"priority_que": "0ObjectEmpty",
+"priority_queu": "0ObjectEmpty",
+"priority_queue": "0ObjectEmpty",
+"r": "0ObjectEmpty",
+"re": "0ObjectEmpty",
+"ref": "0ObjectEmpty",
+"refc": "0ObjectEmpty",
+"refco": "0ObjectEmpty",
+"refcou": "0ObjectEmpty",
+"refcoun": "0ObjectEmpty",
+"refcount": "0ObjectEmpty",
+"refcounte": "0ObjectEmpty",
+"refcounted": "0ObjectEmpty",
+"refcountedQ": "0ObjectEmpty",
+"s": "0ObjectEmpty",
+"sk": "0ObjectEmpty",
+"ski": "0ObjectEmpty",
+"skil": "0ObjectEmpty",
+"skill": "0ObjectEmpty"
+}
+metadata/script_setup_use_script_templates = true
+metadata/export_template_download_directory = "/home/dome/Downloads"

@@ -10,8 +10,17 @@ telescope.setup({
         ["<C-k>"] = actions.move_selection_previous,
       },
     },
-    path_display = { "tail" },
+    path_display = { "filename_first" },
     dynamic_preview_title = true,
+  },
+  pickers = {
+    buffers = {
+      mappings = {
+        i = {
+          ["<c-d>"] = actions.delete_buffer + actions.move_to_top,
+        }
+      }
+    }
   }
 })
 

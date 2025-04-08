@@ -49,27 +49,59 @@ input type:keyboard {
 ###############################
 # WORKSPACES
 ###############################
-set $ws01  1
-set $ws02  2
-set $ws03  3
-set $ws04  4
-set $ws05  5
-set $ws06  6
-set $ws07  7
-set $ws08  8
-set $ws09  9
-set $ws10 10
-
+set $ws01 1
 workspace $ws01 output $output_middle
+bindsym $mod+1 workspace $ws01
+bindsym $mod+Shift+1 move container to workspace $ws01
+
+set $ws02 2
 workspace $ws02 output $output_middle
+bindsym $mod+2 workspace $ws02
+bindsym $mod+Shift+2 move container to workspace $ws02
+
+set $ws03 3
 workspace $ws03 output $output_middle
+bindsym $mod+3 workspace $ws03
+bindsym $mod+Shift+3 move container to workspace $ws03
+
+set $ws04 4
 workspace $ws04 output $output_middle
+bindsym $mod+4 workspace $ws04
+bindsym $mod+Shift+4 move container to workspace $ws04
+
+set $ws05 5
 workspace $ws05 output $output_left
+bindsym $mod+5 workspace $ws05
+bindsym $mod+Shift+5 move container to workspace $ws05
+
+set $ws06 6
 workspace $ws06 output $output_left
+bindsym $mod+6 workspace $ws06
+bindsym $mod+Shift+6 move container to workspace $ws06
+
+set $ws07 7
 workspace $ws07 output $output_left
+bindsym $mod+7 workspace $ws07
+bindsym $mod+Shift+7 move container to workspace $ws07
+
+set $ws08 8
 workspace $ws08 output $output_right
+bindsym $mod+8 workspace $ws08
+bindsym $mod+Shift+8 move container to workspace $ws08
+
+set $ws09 9
 workspace $ws09 output $output_right
+bindsym $mod+9 workspace $ws09
+bindsym $mod+Shift+9 move container to workspace $ws09
+
+set $ws10 10
 workspace $ws10 output $output_right
+bindsym $mod+0 workspace $ws10
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+set $darkheit darkheit
+workspace $darkheit output $output_left
+bindsym $mod+KP_0 workspace $darkheit
 
 ###############################
 # APP SPECIFIC SETTINGS
@@ -81,7 +113,7 @@ for_window {
   [app_id="obsidian"] move container to workspace $ws09
 
   # Specific workspaces
-  [app_id="awakening"] move container to workspace $ws05
+  [app_id="awakening"] move container to workspace $darkheit
 
   # Floating windows
   [title="Firefox Developer Edition — Sharing Indicator"] floating enable
@@ -177,29 +209,6 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+Shift+a focus child
 
-# switch to workspace
-bindsym $mod+1 workspace $ws01
-bindsym $mod+2 workspace $ws02
-bindsym $mod+3 workspace $ws03
-bindsym $mod+4 workspace $ws04
-bindsym $mod+5 workspace $ws05
-bindsym $mod+6 workspace $ws06
-bindsym $mod+7 workspace $ws07
-bindsym $mod+8 workspace $ws08
-bindsym $mod+9 workspace $ws09
-bindsym $mod+0 workspace $ws10
-
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws01
-bindsym $mod+Shift+2 move container to workspace $ws02
-bindsym $mod+Shift+3 move container to workspace $ws03
-bindsym $mod+Shift+4 move container to workspace $ws04
-bindsym $mod+Shift+5 move container to workspace $ws05
-bindsym $mod+Shift+6 move container to workspace $ws06
-bindsym $mod+Shift+7 move container to workspace $ws07
-bindsym $mod+Shift+8 move container to workspace $ws08
-bindsym $mod+Shift+9 move container to workspace $ws09
-bindsym $mod+Shift+0 move container to workspace $ws10
 
 ###############################
 # RESIZING CONTAINERS

@@ -109,13 +109,18 @@ function logf {
 }
 
 function swayconfig {
-  if [[ $1 == "default" ]]; then
-    /home/dome/bin/swayconfig.default.sh
+  config_whitelist=(
+    "default"
+    "gaming"
+    "4k"
+  )
+
+  if [[ ! " ${config_whitelist[@]} " =~ " $1 " ]]; then
+    echo "Invalid config name. Available configs: ${config_whitelist[@]}"
+    return 1
   fi
 
-  if [[ $1 == "gaming" ]]; then
-    /home/dome/bin/swayconfig.gaming.sh
-  fi
+  /home/dome/bin/swayconfig.${1}.sh
 }
 
 ##

@@ -98,8 +98,8 @@ gut/hide_result_tree = false
 gut/hide_output_text = false
 gut/hide_settings = true
 gut/use_colors = true
-_editor_settings_advanced_mode = false
-_project_settings_advanced_mode = false
+_editor_settings_advanced_mode = true
+_project_settings_advanced_mode = true
 _export_template_download_directory = ""
 _script_setup_templates_dictionary = {
 "Control": "1ControlTemplate With Styleguide",

@@ -41,7 +41,6 @@ RPROMPT='%F{8}[${vim_mode}] [$vcs_info_msg_0_]%f'
 # ENVIRONMENT
 ##
 export EDITOR=nvim
-export TERMINAL=kitty
 export ANDROID_HOME=$HOME/Android/Sdk
 export KEYTIMEOUT=1
 export BROWSER=firefox-developer-edition
@@ -67,12 +66,19 @@ export FZF_MARKS_FILE=$HOME/.config/ranger/plugins/fzf-marks/.fzf-marks
 # Use single quote to circumvent unwanted expansions (https://superuser.com/a/847842)
 export WORDCHARS='*?.[]~=&;!#$%^(){}<>'
 
+# Explicitly set XDG base directories to avoid conflicts with other applications
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+export CLAUDE_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/claude"
 
 ##
 # ALIAS
 ##
 alias v="nvim"
-alias vs="nvim --listen /tmp/nvim.pipe"
+alias vs="nvim --listen ${XDG_RUNTIME_DIR:-/tmp}/nvim.pipe"
 alias sudo="sudo "
 alias ga="git add --all"
 alias gc="git commit -m"
@@ -83,6 +89,10 @@ alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --colo
 alias open="xdg-open"
 alias sshk="kitty +kitten ssh"
 alias ai="sgpt"
+alias aider="aider --config $HOME/.config/aider/.aider.conf.yml --env $HOME/.config/aider/.env"
+
+# remove when 0.13 is released
+alias lnav="/opt/lnav-0.13.0-rc2/lnav"
 
 ##
 # FUNCTIONS
@@ -92,20 +102,12 @@ function to {
   /usr/bin/xdg-open $1
 }
 
-function ex-watch {
-  fswatch -r -m poll_monitor lib/ test/ | MIX_ENV=test mix test --stale --listen-on-stdin
-}
-
 function enerjoy {
   ./bin/enerjoy.sh $@
 }
 
 function darkheit {
   ./darkheit.sh $@
-}
-
-function logf {
-  tail -f $@ | fzf --tail 100000 --tac --no-sort --exact --wrap
 }
 
 function swayconfig {

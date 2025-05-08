@@ -33,6 +33,7 @@
 !.config/waybar/
 !.config/wireplumber/
 !.config/xdg-desktop-portal-wlr/
+!.config/aider/
 
 !.local/
 !.local/share/
@@ -56,5 +57,7 @@
 !.config/waybar/**
 !.config/wireplumber/**
 !.config/xdg-desktop-portal-wlr/**
+!.config/aider/**
+.config/aider/.env
 
 !.local/share/applications/**

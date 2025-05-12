@@ -8,53 +8,36 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
   update_in_insert = false,
 })
 
-local lsp_formatting = function (bufnr)
-  vim.lsp.buf.format({
-    filter = function (client)
-      return (client.name ~= "ts_ls") or (client.name ~= "gdscript")
-    end,
-    bufnr = bufnr,
-  })
-end
-
--- if you want to set up formatting on save, you can use this as a callback
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
-local on_attach = function (client, bufnr)
-  local function buf_set_keymap(...)
-    vim.api.nvim_buf_set_keymap(bufnr, ...)
-  end
-
-  local opts = { noremap = true, silent = true }
-
-  buf_set_keymap("n", "gd", [[<cmd>lua require('telescope.builtin').lsp_definitions()<CR>]], opts)
-  buf_set_keymap("n", "gr", [[<cmd>lua require('telescope.builtin').lsp_references()<CR>]], opts)
-  buf_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-  buf_set_keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-  buf_set_keymap("n", "<leader>ss", [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts)
-  buf_set_keymap("n", "<leader>sd", [[<cmd>lua require('telescope.builtin').diagnostics()<CR>]], opts)
-  buf_set_keymap("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-  buf_set_keymap("n", "<leader>h", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-
-  -- format on save
-  if client.supports_method("textDocument/formatting") then
-    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      group = augroup,
-      buffer = bufnr,
-      callback = function ()
-        lsp_formatting(bufnr)
-      end,
-    })
-  end
-end
+-- Auto-format on save
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = vim.api.nvim_create_augroup("LspFormatting", {}),
+  callback = function (args)
+    local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+    if not client:supports_method("textDocument/willSaveWaitUntil")
+      and client:supports_method("textDocument/formatting") then
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        group = vim.api.nvim_create_augroup("my.lsp", { clear = false }),
+        buffer = args.buf,
+        callback = function ()
+          vim.lsp.buf.format({
+            filter = function (c)
+              return (c.name ~= "ts_ls") or (c.name ~= "gdscript")
+            end,
+            bufnr = args.buf,
+            id = client.id,
+            timeout_ms = 1000
+          })
+        end,
+      })
+    end
+  end,
+})
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Elixir
 nvim_lsp.elixirls.setup({
   capabilities = capabilities,
-  on_attach = on_attach,
   cmd = { "/usr/bin/elixir-ls" },
   root_dir = util.root_pattern("mix.exs")
 })
@@ -62,7 +45,6 @@ nvim_lsp.elixirls.setup({
 -- TypeScript
 nvim_lsp.ts_ls.setup({
   capabilities = capabilities,
-  on_attach = on_attach,
   -- https://github.com/typescript-language-server/typescript-language-server#initializationoptions
   init_options = {
     preferences = {
@@ -74,27 +56,23 @@ nvim_lsp.ts_ls.setup({
 -- JSON
 nvim_lsp.jsonls.setup({
   capabilities = capabilities,
-  on_attach = on_attach,
   cmd = { "vscode-json-languageserver", "--stdio" },
 })
 
 -- HTML
 nvim_lsp.html.setup({
   capabilities = capabilities,
-  on_attach = on_attach,
   cmd = { "vscode-html-languageserver", "--stdio" },
 })
 
 -- ESLint
 nvim_lsp.eslint.setup({
-  on_attach = on_attach,
   cmd = { "vscode-eslint-language-server", "--stdio" },
 })
 
 -- Lua
 nvim_lsp.lua_ls.setup({
   capabilities = capabilities,
-  on_attach = on_attach,
 })
 
 -- efm
@@ -107,7 +85,6 @@ local prettier = {
 }
 
 nvim_lsp["efm"].setup({
-  on_attach = on_attach,
   init_options = { documentFormatting = true },
   settings = {
     rootMarkers = { ".git/" },
@@ -162,38 +139,50 @@ nvim_lsp["efm"].setup({
 -- XML
 nvim_lsp.lemminx.setup({
   capabilities = capabilities,
-  on_attach = on_attach,
   cmd = { "lemminx" },
 })
 
 -- GDScript
 nvim_lsp.gdscript.setup({
   capabilities = capabilities,
-  on_attach = on_attach,
   cmd = vim.lsp.rpc.connect("127.0.0.1", 6005)
 })
 
 -- Bash
 nvim_lsp.bashls.setup({
   capabilities = capabilities,
-  on_attach = on_attach
 })
 
 -- C++
 nvim_lsp.clangd.setup({
   capabilities = capabilities,
-  on_attach = on_attach,
   cmd = { "clangd", "--offset-encoding=utf-16", },
 })
 
 -- Dockerfile
 nvim_lsp.dockerls.setup({
   capabilities = capabilities,
-  on_attach = on_attach,
 })
 
 -- Docker Compose
 nvim_lsp.docker_compose_language_service.setup({
   capabilities = capabilities,
-  on_attach = on_attach,
+})
+
+-- C#
+require("roslyn").setup({
+  config = {
+    cmd = {
+      "dotnet",
+      "/opt/roslyn-ls/Microsoft.CodeAnalysis.LanguageServer.dll",
+      "--logLevel=Information",
+      "--extensionLogDirectory=" .. vim.fs.dirname(vim.lsp.get_log_path()),
+      "--stdio",
+    },
+    settings = {
+      ["csharp|formatting"] = {
+        dotnet_organize_imports_on_format = true,
+      },
+    },
+  },
 })

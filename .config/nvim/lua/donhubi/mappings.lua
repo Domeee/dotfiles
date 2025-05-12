@@ -51,7 +51,7 @@ map("n", "<leader>vj", "<cmd>diffget //3<CR>") -- merge branch
 -- Telescope
 map("n", "<leader>sf", "<cmd>Telescope find_files<CR>")
 map("n", "<leader>sg", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
-map("n", "<leader>sb", "<cmd>Telescope buffers<CR>")
+map("n", "<leader>sb", "<cmd>Telescope current_buffer_fuzzy_find<CR>")
 map("n", "<leader>sm", "<cmd>Telescope marks<CR>")
 
 -- undo breakpoints
@@ -77,8 +77,30 @@ vim.keymap.set("n", "<leader>b", function () require("dap").toggle_breakpoint() 
 vim.keymap.set("n", "<leader>gb", function () require("dap").run_to_cursor() end)
 
 -- ChatGPT
-vim.keymap.set("n", "<leader>cc", "<cmd>ChatGPT<CR>")
-vim.keymap.set({ "n", "v" }, "<leader>ci", "<cmd>ChatGPTEditWithInstruction<CR>")
+map("n", "<leader>cc", "<cmd>ChatGPT<CR>")
+map("n", "<leader>ci", "<cmd>ChatGPTEditWithInstruction<CR>")
+map("v", "<leader>ci", "<cmd>ChatGPTEditWithInstruction<CR>")
 
 -- Copilot
-vim.keymap.set("i", "<C-K>", "<Plug>(copilot-suggest)")
+map("i", "<C-K>", "<Plug>(copilot-suggest)")
+
+-- LSP (local to buffer)
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function (args)
+    local opts = { noremap = true, silent = true }
+
+    vim.api.nvim_buf_set_keymap(args.buf, "n", "gd", [[<cmd>lua require('telescope.builtin').lsp_definitions()<CR>]],
+      opts)
+    vim.api.nvim_buf_set_keymap(args.buf, "n", "grr", [[<cmd>lua require('telescope.builtin').lsp_references()<CR>]],
+      opts)
+    vim.api.nvim_buf_set_keymap(args.buf, "n", "gO", [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]],
+      opts)
+    vim.api.nvim_buf_set_keymap(args.buf, "n", "gri", [[<cmd>lua require('telescope.builtin').lsp_implementations()<CR>]],
+      opts)
+    vim.api.nvim_buf_set_keymap(args.buf, "n", "<leader>sd", [[<cmd>lua require('telescope.builtin').diagnostics()<CR>]],
+      opts)
+    vim.api.nvim_buf_set_keymap(args.buf, "n", "grt",
+      [[<cmd>lua require('telescope.builtin').lsp_type_definitions()<CR>]],
+      opts)
+  end,
+})

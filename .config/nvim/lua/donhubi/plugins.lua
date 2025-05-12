@@ -47,6 +47,8 @@ require("paq")({
   "lukas-reineke/indent-blankline.nvim",
   "goolord/alpha-nvim",
   "nvim-tree/nvim-web-devicons",
+  -- dotnet --
+  "seblyng/roslyn.nvim",
 })
 
 local home = vim.fn.expand("$HOME")

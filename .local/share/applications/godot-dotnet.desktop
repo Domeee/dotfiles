@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Godot .NET
+Exec=/opt/godot-4.4-dotnet/Godot_v4.4.1-stable_mono_linux.x86_64 --display-driver wayland %f
+Terminal=false
+PrefersNonDefaultGPU=true
+Type=Application
+MimeType=application/x-godot-project;
+Categories=Development;IDE;
+StartupWMClass=Godot

@@ -65,7 +65,3 @@ require("chatgpt").setup({
 
 require("ibl").setup()
 require("nvim-surround").setup()
-
--- vim.g.copilot_filetypes = {
---   ["*"] = false,
--- }

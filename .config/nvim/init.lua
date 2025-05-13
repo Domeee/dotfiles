@@ -1,7 +1,7 @@
-require("donhubi/scratch")
 require("donhubi/plugins")
 require("donhubi/commands")
 require("donhubi/lsp")
+require("donhubi/diagnostic")
 require("donhubi/debugging")
 require("donhubi/completion")
 require("donhubi/telescope")

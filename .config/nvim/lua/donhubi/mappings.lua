@@ -84,7 +84,10 @@ map("v", "<leader>ci", "<cmd>ChatGPTEditWithInstruction<CR>")
 -- Copilot
 map("i", "<C-K>", "<Plug>(copilot-suggest)")
 
--- LSP (local to buffer)
+-- LSP
+map("n", "K", "<cmd>lua vim.lsp.buf.hover({max_width = 100})<CR>")
+
+-- local to buffer
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function (args)
     local opts = { noremap = true, silent = true }

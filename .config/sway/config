@@ -264,6 +264,9 @@ bindsym XF86AudioPrev exec --no-startup-id dbus-send --print-reply --dest=org.mp
 # turn monitor off after minutes * seconds
 exec swayidle -w timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
 
+# work around controller bug with swayidle
+for_window [class="steam_app*"] inhibit_idle focus
+
 ###############################
 # STATUS BAR
 ###############################

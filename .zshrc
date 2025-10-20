@@ -54,6 +54,16 @@ export ENERJOY_CONFIG_HOME=/home/dome/code/enerjoy
 export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/ripgrep.conf
 export QT_STYLE_OVERRIDE=adwaita-dark
 
+# FZF
+export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"
+export FZF_DEFAULT_OPTS_FILE=$HOME/.config/fzf/config
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git,node_modules
+  --preview 'fzf-preview.sh {}'"
+export FZF_ALT_C_OPTS="
+  --walker-skip .git,node_modules
+  --preview 'tree -C {}'"
+
 # ASDF-VM
 export ASDF_DIR=$HOME/.config/asdf
 export ASDF_DATA_DIR=$HOME/.config/asdf

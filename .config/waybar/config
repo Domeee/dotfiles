@@ -5,7 +5,7 @@
   "margin": 0,
   "modules-left": ["sway/workspaces"],
   "modules-center": ["sway/window"],
-  "modules-right": ["clock"],
+  "modules-right": ["wireplumber", "tray", "clock"],
   // Modules configuration
   "sway/workspaces": {
     "all-outputs": false,
@@ -13,6 +13,12 @@
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format": "<span>{:%Y-%m-%d %H:%M }</span>"
-  }
+  },
+  "wireplumber": {
+    "format": "{volume}% {icon}",
+    "format-muted": "🔇",
+    "on-click": "pavucontrol",
+    "format-icons": ["", "", ""]
+},
 }
 

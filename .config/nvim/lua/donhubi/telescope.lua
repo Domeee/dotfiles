@@ -5,7 +5,6 @@ telescope.setup({
   defaults = {
     mappings = {
       i = {
-        ["<C-l>"] = actions.close,
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
       },

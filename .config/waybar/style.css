@@ -256,3 +256,13 @@ label:focus {
 #scratchpad.empty {
 	background-color: transparent;
 }
+
+#wireplumber {
+  background-color: transparent;
+  color: #B9B9CA;
+}
+
+#wireplumber.muted {
+  background-color: #B9B9CA;
+  color: #FFFFFF;
+}

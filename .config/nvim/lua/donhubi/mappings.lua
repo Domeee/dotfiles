@@ -1,4 +1,5 @@
 local g = vim.g
+
 local function map(mode, lhs, rhs, opts)
   local options = { noremap = true }
   if opts then
@@ -7,15 +8,14 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+-- Help me unlearn this mapping habit quick
+map("i", "<C-l>", "",
+  { silent = true, noremap = true, callback = function () vim.notify("Shame 🔔, shame 🔔, shame 🔔") end })
+
 --Remap space as leader key
 map("n", "<space>", "", { silent = true })
 g.mapleader = " "
 g.maplocalleader = " "
-
--- return to normal mode
-map("v", "<C-l>", "<esc>")
-map("c", "<C-l>", "<C-c>")
-map("i", "<C-l>", "<esc>")
 
 -- buffer
 map("n", "<leader>/", "<cmd>noh<CR>")
@@ -33,14 +33,17 @@ map("n", "<C-l>", "<C-w><C-l>")
 -- Have j and k navigate visual lines rather than logical ones, unless navigating via relative line numbers
 map("n", "j", "v:count ? 'j' : 'gj'", { expr = true })
 map("n", "k", "v:count ? 'k' : 'gk'", { expr = true })
-map("n", "<leader>d", "<cmd>lua vim.diagnostic.goto_next()<CR>")
+
+-- diagnostics
+vim.keymap.set("n", "<leader>d", function ()
+  vim.diagnostic.jump({ count = -1, float = true })
+end)
 
 -- config
 map("n", "<leader>cv", "<cmd>edit $MYVIMRC<CR>")
 
 -- misc
 map("n", "<leader>ff", "<cmd>RnvimrToggle<CR>")
-map("n", "gs", "<cmd>Scratch<CR>")
 
 -- vim-fugitive
 map("n", "<leader>vs", "<cmd>G<CR>")
@@ -76,13 +79,13 @@ vim.keymap.set("n", "<F10>", function () require("dap").step_back() end)
 vim.keymap.set("n", "<leader>b", function () require("dap").toggle_breakpoint() end)
 vim.keymap.set("n", "<leader>gb", function () require("dap").run_to_cursor() end)
 
--- ChatGPT
-map("n", "<leader>cc", "<cmd>ChatGPT<CR>")
-map("n", "<leader>ci", "<cmd>ChatGPTEditWithInstruction<CR>")
-map("v", "<leader>ci", "<cmd>ChatGPTEditWithInstruction<CR>")
-
 -- Copilot
 map("i", "<C-K>", "<Plug>(copilot-suggest)")
+vim.keymap.set("i", "<C-J>", "copilot#Accept('')", {
+  expr = true,
+  replace_keycodes = false
+})
+vim.g.copilot_no_tab_map = true
 
 -- LSP
 map("n", "K", "<cmd>lua vim.lsp.buf.hover({max_width = 100})<CR>")
@@ -96,9 +99,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
       opts)
     vim.api.nvim_buf_set_keymap(args.buf, "n", "grr", [[<cmd>lua require('telescope.builtin').lsp_references()<CR>]],
       opts)
-    vim.api.nvim_buf_set_keymap(args.buf, "n", "gO", [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]],
-      opts)
     vim.api.nvim_buf_set_keymap(args.buf, "n", "gri", [[<cmd>lua require('telescope.builtin').lsp_implementations()<CR>]],
+      opts)
+    -- override default (gO)
+    vim.api.nvim_buf_set_keymap(args.buf, "n", "<leader>ss",
+      [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]],
+      opts)
+    vim.api.nvim_buf_set_keymap(args.buf, "n", "<leader>sw",
+      [[<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<CR>]],
       opts)
     vim.api.nvim_buf_set_keymap(args.buf, "n", "<leader>sd", [[<cmd>lua require('telescope.builtin').diagnostics()<CR>]],
       opts)

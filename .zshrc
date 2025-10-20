@@ -41,6 +41,7 @@ RPROMPT='%F{8}[${vim_mode}] [$vcs_info_msg_0_]%f'
 # ENVIRONMENT
 ##
 export EDITOR=nvim
+export VISUAL="$EDITOR"
 export ANDROID_HOME=$HOME/Android/Sdk
 export KEYTIMEOUT=1
 export BROWSER=firefox-developer-edition
@@ -83,6 +84,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
 export CLAUDE_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/claude"
+export DOCKER_BUILDKIT=1
 
 ##
 # ALIAS
@@ -98,11 +100,7 @@ alias ls='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color
 alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias open="xdg-open"
 alias sshk="kitty +kitten ssh"
-alias ai="sgpt"
-alias aider="aider --config $HOME/.config/aider/.aider.conf.yml --env $HOME/.config/aider/.env"
-
-# remove when 0.13 is released
-alias lnav="/opt/lnav-0.13.0-rc2/lnav"
+alias cat=bat
 
 ##
 # FUNCTIONS
@@ -132,7 +130,7 @@ function swayconfig {
     return 1
   fi
 
-  /home/dome/bin/swayconfig.${1}.sh
+  /home/dome/.local/bin/swayconfig.${1}.sh
 }
 
 ##
@@ -141,18 +139,7 @@ function swayconfig {
 bindkey -v # zsh vim mode
 bindkey '^W' backward-delete-word
 bindkey '^ ' autosuggest-accept # <CTRL><SPACE> to accept
-bindkey -M viins '^l' vi-cmd-mode # exit insert mode with <CTRL>l
 bindkey '^R' history-incremental-search-backward 
-
-##
-# MISC
-##
-source /usr/share/z/z.sh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
-
 
 ##
 # ZSH
@@ -165,3 +152,19 @@ fpath=(${ASDF_DATA_DIR}/completions $fpath)
 autoload -Uz compinit promptinit vcs_info zcalc
 compinit
 promptinit
+
+# generic long-option completion for commands that lack one
+autoload -Uz _gnu_generic
+compdef _gnu_generic file
+
+##
+# MISC setup after zsh init
+##
+source /usr/share/z/z.sh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

@@ -27,9 +27,9 @@ floating_modifier $mod
 ###############################
 
 # swaymsg -t get_outputs; man 5 sway-output
-output $output_left scale 2 pos 0 0
-output $output_middle scale 2 pos 1920 0
-output $output_right scale 2 pos 3840 0
+output $output_left transform 90 scale 2 pos 0 0
+output $output_middle scale 2 pos 1080 0
+output $output_right scale 2 pos 3000 0
 
 # requires swaybg
 output * bg #16161D solid_color
@@ -42,7 +42,6 @@ output * bg #16161D solid_color
 input type:keyboard {
     xkb_layout "ch"
     xkb_variant ",qwertz"
-    xkb_options "ctrl:swapcaps"
     xkb_numlock enabled
 }
 
@@ -133,10 +132,10 @@ for_window {
 ###############################
 # SCRATCHPAD
 ###############################
+for_window [title="__scratchpad"] move scratchpad
 exec kitty --title __scratchpad
 
-bindsym $mod+s [title="__scratchpad"] scratchpad show
-for_window [title="__scratchpad"] move scratchpad, resize set 800 600
+bindsym $mod+s [title="__scratchpad"] scratchpad show, resize set 700 px 420 px, move position center
 
 ##############################
 # BORDERS
@@ -209,6 +208,13 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+Shift+a focus child
 
+# media keys
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioPlay exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym XF86AudioNext exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+bindsym XF86AudioPrev exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 
 ###############################
 # RESIZING CONTAINERS
@@ -216,10 +222,6 @@ bindsym $mod+Shift+a focus child
 mode "resize" {
     # These bindings trigger as soon as you enter the resize mode
 
-    # Pressing h will grow the window’s width.
-    # Pressing l will shrink the window’s width.
-    # Pressing j will grow the window’s height.
-    # Pressing k will shrink the window’s height.
     bindsym h resize grow width 10 px or 10 ppt
     bindsym j resize grow height 10 px or 10 ppt
     bindsym k resize shrink height 10 px or 10 ppt
@@ -250,13 +252,6 @@ mode "$mode_system" {
 
 bindsym $alt+F4 mode "$mode_system"
 
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioPlay exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-bindsym XF86AudioNext exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
-bindsym XF86AudioPrev exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
-
 ###############################
 # IDLE
 ###############################
@@ -276,12 +271,8 @@ bar swaybar_command waybar
 ###############################
 # AUTOSTART
 ###############################
-# https://wiki.archlinux.org/title/PipeWire#WebRTC_screen_sharing
-# https://github.com/flameshot-org/flameshot/blob/master/docs/Sway%20and%20wlroots%20support.md#sway-and-wlroots-support
-exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-exec hash dbus-update-activation-environment 2>/dev/null && \
-     dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec obsidian --ozone-platform-hint=auto %U
 exec wlsunset -l 46.93 -L 7.56
+exec udiskie --automount --notify --smart-tray
 
 include /etc/sway/config.d/*

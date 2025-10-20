@@ -4,7 +4,7 @@
 # Main model:
 
 ## Specify the model to use for the main chat
-model: o4-mini
+model: gpt-5-codex
 
 #################
 # Model settings:

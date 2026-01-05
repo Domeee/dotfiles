@@ -1,4 +1,4 @@
 [Desktop Entry]
 Name=Screenshot Screen
-Exec=/home/dome/bin/grim_screenshot_screen.sh
+Exec=/home/dome/.local/bin/grim_screenshot_screen.sh
 Type=Application

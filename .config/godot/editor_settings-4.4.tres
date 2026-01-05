@@ -102,6 +102,10 @@ _editor_settings_advanced_mode = true
 _project_settings_advanced_mode = true
 _export_template_download_directory = ""
 _script_setup_templates_dictionary = {
+"": "0ObjectEmpty",
+"-": "0ObjectEmpty",
+"-R": "0ObjectEmpty",
+"Button": "1ControlTemplate With Styleguide",
 "C": "0ObjectEmpty",
 "Ch": "0ObjectEmpty",
 "Cha": "0ObjectEmpty",
@@ -110,7 +114,7 @@ _script_setup_templates_dictionary = {
 "Charac": "0ObjectEmpty",
 "Charact": "0ObjectEmpty",
 "Characte": "0ObjectEmpty",
-"Character": "1NodeTemplate With Styleguide",
+"Character": "1RefCountedTemplate With Styleguide",
 "CharacterB": "0ObjectEmpty",
 "CharacterBe": "0ObjectEmpty",
 "CharacterBeh": "0ObjectEmpty",
@@ -119,6 +123,11 @@ _script_setup_templates_dictionary = {
 "CharacterBehavi": "0ObjectEmpty",
 "CharacterBehavio": "0ObjectEmpty",
 "CharacterBehavior": "1RefCountedTemplate With Styleguide",
+"Co": "0ObjectEmpty",
+"Con": "0ObjectEmpty",
+"Cont": "0ObjectEmpty",
+"Contr": "0ObjectEmpty",
+"Contro": "0ObjectEmpty",
 "Control": "1ControlTemplate With Styleguide",
 "D": "0ObjectEmpty",
 "De": "0ObjectEmpty",
@@ -140,6 +149,7 @@ _script_setup_templates_dictionary = {
 "DecisionTreeDecisi": "0ObjectEmpty",
 "DecisionTreeDecisio": "0ObjectEmpty",
 "DecisionTreeDecision": "1RefCountedTemplate With Styleguide",
+"HBoxContainer": "1ControlTemplate With Styleguide",
 "I": "0ObjectEmpty",
 "In": "0ObjectEmpty",
 "Inf": "0ObjectEmpty",
@@ -156,7 +166,22 @@ _script_setup_templates_dictionary = {
 "Influence_m": "0ObjectEmpty",
 "Influence_ma": "0ObjectEmpty",
 "Influence_map": "0ObjectEmpty",
+"MarginContainer": "1ControlTemplate With Styleguide",
 "Node": "1NodeTemplate With Styleguide",
+"Node2D": "1NodeTemplate With Styleguide",
+"P": "0ObjectEmpty",
+"Pa": "0ObjectEmpty",
+"Pan": "0ObjectEmpty",
+"Pane": "0ObjectEmpty",
+"Panel": "1ControlTemplate With Styleguide",
+"PanelC": "0ObjectEmpty",
+"PanelCo": "0ObjectEmpty",
+"PanelCon": "0ObjectEmpty",
+"PanelCont": "0ObjectEmpty",
+"PanelConta": "0ObjectEmpty",
+"PanelContai": "0ObjectEmpty",
+"PanelContain": "0ObjectEmpty",
+"PanelContaine": "0ObjectEmpty",
 "PanelContainer": "1ControlTemplate With Styleguide",
 "R": "0ObjectEmpty",
 "Re": "0ObjectEmpty",
@@ -172,6 +197,12 @@ _script_setup_templates_dictionary = {
 "RefCoutn": "0ObjectEmpty",
 "RefCoutne": "0ObjectEmpty",
 "RefCoutned": "0ObjectEmpty",
+"Res": "0ObjectEmpty",
+"Reso": "0ObjectEmpty",
+"Resou": "0ObjectEmpty",
+"Resour": "0ObjectEmpty",
+"Resourc": "0ObjectEmpty",
+"Resource": "1ResourceTemplate With Styleguide",
 "S": "0ObjectEmpty",
 "Sk": "0ObjectEmpty",
 "Ski": "0ObjectEmpty",
@@ -220,6 +251,7 @@ _script_setup_templates_dictionary = {
 "StatusEffectcombatActio": "0ObjectEmpty",
 "StatusEffectcombatAction": "0ObjectEmpty",
 "StatusEffectombatAction": "0ObjectEmpty",
+"TextureButton": "1ControlTemplate With Styleguide",
 "VBoxContainer": "1ControlTemplate With Styleguide",
 "b": "0ObjectEmpty",
 "be": "0ObjectEmpty",
@@ -231,6 +263,11 @@ _script_setup_templates_dictionary = {
 "behavior": "0ObjectEmpty"
 }
 _script_setup_use_script_templates = true
+dotnet/editor/external_editor = 0
+dotnet/editor/custom_exec_path = ""
+dotnet/editor/custom_exec_path_args = ""
+dotnet/build/verbosity_level = 2
+dotnet/build/problems_layout = 1
 shortcuts = [{
 "name": "script_text_editor/toggle_breakpoint",
 "shortcuts": []

@@ -1,4 +1,4 @@
 [Desktop Entry]
 Name=Screenshot Region
-Exec=/home/dome/bin/grim_screenshot_region.sh
+Exec=/home/dome/.local/bin/grim_screenshot_region.sh
 Type=Application

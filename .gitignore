@@ -82,3 +82,6 @@
 !.local/share/
 !.local/share/applications/
 !.local/share/applications/**
+
+!.loca/bin/
+!.local/bin/**

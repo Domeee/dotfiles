@@ -1,6 +1,0 @@
-pkgname=nodejs-standin
-pkgver=0.1
-pkgrel=1
-pkgdesc="standin package for nodejs"
-arch=('any')
-provides=('nodejs' 'npm')
